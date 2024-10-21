@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
+    <style>
+        fieldset{
+            background: rgb(59, 245, 236);
+            border: 5px solid violet;
+            border-radius: 20px;
+        }
+
+        legend {
+            font-size: 35px; /* 字體大小 */
+            font-weight: bold; /* 粗體 */
+            color: blueviolet;
+            padding: 0 10px; /* 增加左右內邊距 */
+            background: rgb(245, 248, 62);
+            font-family: "Playwrite GB S", cursive;
+            border-radius: 20px;
+         }
+
+         select {
+            width: 120px;  /* 設定寬度 */
+            height: 40px;  /* 設定高度 */
+            font-size: 16px; /* 設定字體大小 */
+            padding: 5px;   /* 內邊距 */
+            border-radius: 5px;
+        }
+
+        table {
+            width: 80%; /* 設定表格寬度 */
+            border-collapse: collapse; /* 合併邊框 */
+            margin: 70px auto;
+            background: blanchedalmond;
+            border-radius: 10px; /* 設定圓角 */
+            overflow: hidden; /* 確保圓角效果有效 */
+
+        }
+        
+        td {
+            border: 1px solid #ddd; /* 邊框樣式 */
+            padding: 8px; /* 內邊距 */
+            text-align: center; /* 文字左對齊 */
+            
+        }
+
+        span {
+            display: inline-block;
+            width: 10%;
+            text-align: center;
+            background-color: lightblue;
+        }
+
+
+        input[type="number"] {
+            width: 50%;
+            height: 34px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        
+        textarea{
+            border-radius: 5px;  
+        }
+
+
+        input[type="submit"] {
+            background-color: #4CAF50; /* 修改这里的颜色 */
+            color: white; /* 文字颜色 */
+            border: none; /* 去掉边框 */
+            padding: 10px 20px; /* 内边距 */
+            text-align: center; /* 文本居中 */
+            text-decoration: none; /* 去掉下划线 */
+            display: inline-block; /* 让它表现得像一个块元素 */
+            font-size: 16px; /* 字体大小 */
+            cursor: pointer; /* 鼠标悬停时显示手型 */
+            border-radius: 5px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049; /* 鼠标悬停时的背景色 */
+    </style>
+
+</head>
+
+
+<body>
+    <fieldset>
+        <legend> What to eat today </legend>
+        <form action="./getData.php">
+<table>
+    <tr>
+        <td>品項</td>
+        <td>數量</td>
+        <td>單價</td>
+    </tr>
+
+    <tr>
+        <td> 
+            <select name="mySelect" id="">
+                <option value="紅茶">紅茶</option>
+                <option value="奶茶">奶茶</option>
+                <option value="咖啡">咖啡</option>
+                    </select>
+        </td>
+        <td>
+         <input type="number" name="myNumber" id="" value="">
+         </td>
+        <td>25</td>
+    </tr>
+    <tr>
+        <td><p> 
+            <select name="mySelect" id="">
+                <option value="鮪魚蛋餅">鮪魚蛋餅</option>
+                <option value="總匯三明治">總匯三明治</option>
+                <option value="鐵板麵加蛋">鐵板麵加蛋</option>
+                <option value="起司抓餅">起司抓餅</option>
+                <option value="卡拉雞腿堡">卡拉雞腿堡</option>
+                    </select>
+    
+        </p></td>
+        <td><input type="number" name="myNumber" id="" value=""></td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td><p> 
+            <select name="mySelect" id="">
+                <option value="小肉豆">小肉豆</option>
+                <option value="薯餅">薯餅</option>
+                <option value="雞塊">雞塊</option>
+                    </select>
+    
+        </p></td>
+        <td ><input type="number" name="myNumber" id="" value="" ></td>
+        <td>25</td>
+    </tr>
+</table>
+
+    
+
+    
+
+
+    
+            
+            <p>
+                備註
+            </p>
+            <p>
+                <textarea name="myTextarea" id="" cols="50" rows="5"></textarea>
+            </p>
+
+
+
+            <!-- input submit-->
+            <p>
+                <input type="submit" value="submit" >
+            </p>
+
+
+        </form>
+    </fieldset>
+</body>
+
+</html>
