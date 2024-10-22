@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 100%;
+            height: 90vh;
+            border-collapse: collapse;
+            background-color: aquamarine;
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+            font-size: 35px;
+            padding: 20px;
+        }
+
+        input {
+            height: 50px;
+            font-size: 30px;
+        }
+
+        input[type="text"] {
+            /* width: 500px; */
+            width: 70%;
+        }
+
+        input[type="number"] {
+            /* width: 500px; */
+            width: 70%;
+        }
+
+        select {
+            font-size: 30px;
+            padding: 5px;
+        }
+
+        textarea {
+            font-size: 30px;
+        }
+
+        h1 {
+            font-size: "40px"
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend>HR form </legend>
+
+        <form action="./getDate.php">
+
+            <h1>New Employee Information Form</h1>
+
+            <table>
+                <tr>
+                    <td>
+                        <label for="">full name</label>
+                    </td>
+                    <td>
+                        <input type="text" name="myname" id="" value="Alvin Wang">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="">Phone number</label>
+                    </td>
+                    <td>
+                        <input type="number" name="myNumber" id="" value="12345">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="">Address</label></td>
+                    <td><input type="text" name="myaddress" id="" value="Taipei,Taiwan"></td>
+                </tr>
+                <tr>
+                    <td><label for="">Department </label></td>
+                    <td>
+                        <select name="myDepartment" id="">
+                            <option value="Sales">Sales</option>
+                            <option value="Financial">Financial</option>
+                            <option value="Engineer">Engineer</option>
+                        </select>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="">Pay Rate</label></td>
+                    <td>
+                        <input type="radio" name="PayRate" id="" value="40,000-60,000">
+                        <label for="">under 40,000</label><br>
+                        <input type="radio" name="PayRate" id="" value="40,000-60,000">
+                        <label for="">40,000-60,000</label><br>
+                        <input type="radio" name="PayRate" id="" value="60,001-10,000">
+                        <label for="">60,001-10,000</label><br>
+                        <input type="radio" name="PayRate" id="" value="over 100,001">
+                        <label for="">over 100,001</label>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="">Start Date</label></td>
+                    <td>
+                        <input type="date" name="StartDate" id="" value="">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="">Habits</label></td>
+                    <td>
+                        <input type="checkbox" name="Habits[]" id="" value="Reading">
+                        <label for="">Reading</label><br>
+                        <input type="checkbox" name="Habits[]" id="" value="Internet">
+                        <label for="">Internet</label><br>
+                        <input type="checkbox" name="Habits[]" id="" value="Exercise">
+                        <label for="">Exercise</label><br>
+                        <input type="checkbox" name="Habits[]" id="" value="Travel">
+                        <label for="">Travel</label><br>
+                        <input type="checkbox" name="Habits[]" id="" value="Others">
+                        <label for="">Others____________</label>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <p>備註</p>
+                    </td>
+                    <td>
+                        <textarea name="myTextarea" id="" cols="50" rows="10">
+                       </textarea>
+                    </td>
+                </tr>
+            </table>
+
+            <p>
+                <label for=""></label>
+                <input type="submit" name="" id="">
+            </p>
+
+    </fieldset>
+
+
+</body>
+
+</html>
