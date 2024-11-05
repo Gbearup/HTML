@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 144px;
+            height: 209px;
+            background-color: aqua;
+            /*box裡面先放長寬跟背景顏色*/
+
+            background-image: url(./bg.png);
+            /*box裡面要放一張圖，其他的才可以從這邊的相對位置去抓*/
+
+            background-position: 25% bottom;
+            /* 先來一張吧 */
+
+            margin: 20px 20px;
+            /* 設定邊界 */
+        }
+
+        .box1 {
+            background-position: 25% top;
+        }
+
+        .box2 {
+            background-position: 0% bottom;
+        }
+
+        .box3 {
+            background-position: 0% top;
+        }
+
+        .box4 {
+            background-position: 75% top;
+        }
+
+        .box5 {
+            background-position: 75% bottom;
+        }
+
+        .box6 {
+            background-position: 100% top;
+        }
+
+        .box7 {
+            background-position: 100% bottom;
+        }
+
+        .box8 {
+            background-position: 50% bottom;
+        }
+
+        .box9 {
+            background-position: 50% top;
+        }
+
+        h3 {
+            font-size: 30px;
+        }
+
+        .box-img {
+            width: 144px;
+            height: 209px;
+            background-color: plum;
+            /* overflow: hidden; */
+
+        }
+
+        table {
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>img</h3>
+    <img src="./bg.png" alt="">
+
+
+    <h3>bg-img-box</h3>
+    <div class="box">
+    </div>
+
+    <h3>box-img </h3>
+    <div class="box-img">
+        <img src="./bg.png" alt="" width="200px">
+    </div>
+
+
+
+    <table>
+        <tr>
+            <td>
+                <div class="box1 box"></div>
+            </td>
+            <td>
+                <div class="box2 box"></div>
+            </td>
+            <td>
+                <div class="box3 box"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="box4 box"></div>
+            </td>
+            <td>
+                <div class="box5 box"></div>
+            </td>
+            <td>
+                <div class="box6 box"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="box7 box"></div>
+            </td>
+            <td>
+                <div class="box8 box"></div>
+            </td>
+            <td>
+                <div class="box9 box"></div>
+            </td>
+        </tr>
+    </table>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
