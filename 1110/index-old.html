@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+    .container1{
+        width: 100%;
+        height: 90px;
+        background-color: #00B0F0;
+        display: flex;
+      
+        align-items: center;
+    }
+    .text {
+            flex-grow: 1;         /* 讓文字區塊填滿剩餘空間 */
+            text-align: center;   /* 水平置中文字 */
+            font-size: 52px;      /* 字型大小 52px */
+            font-family: "DFKai-sb", "標楷體", "KaiTi", serif; /* 字體設為標楷體 */
+            color: #FFFFFF;       /* 文字顏色白色 */
+            text-shadow: 10px 10px 15px #333333; /* 陰影效果：顏色 #333333，偏移量 10px，模糊系數 15px */
+        }
+
+        .container2{
+          width: 100%;
+          background-color: lightsalmon;
+          }
+        .menu {
+      display: flex;
+      justify-content: space-around; /* 項目平均分布 */
+      background-color: #f0f0f0;
+      padding: 10px;
+      list-style: none;
+      margin: 0;
+    }
+
+    /* 3. 每個選單項目 */
+    .menu-item {
+      padding: 10px 20px;
+      background-color: #EEEEEE; /* 預設背景顏色 */
+      color: #000000; /* 預設文字顏色 */
+      text-decoration: none; /* 無底線 */
+      font-weight: normal; /* 無粗體 */
+      transition: all 0.3s ease; /* 動畫效果 */
+    }
+
+    /* 4. 滑鼠懸停時的樣式 */
+    .menu-item:hover {
+      background-color: #FFFF00; /* 背景顏色 */
+      color: #FF0000; /* 文字顏色 */
+      font-size: 14px; /* 字型大小 */
+      font-weight: bold; /* 字體加粗 */
+      cursor: pointer; /* 更改游標 */
+    }
+
+    /* 5. 內容區域 */
+    .content {
+      padding: 20px;
+      min-height: 300px;
+      background-color: #f9f9f9;
+    }
+
+    /* 6. 頁面內容隱藏樣式 */
+    .content-section {
+      display: none;
+    }
+
+    /* 顯示當前選擇的內容 */
+    .active {
+      display: block;
+    }
+
+
+
+
+.container3{
+    width: 100%;
+    height: 800px;
+    background-color: lightgray;
+
+    background-color: #FFFFFF;
+      font-size: 14px;
+      color: #000000;
+      padding: 20px;
+      margin: 0;
+      display: flex;
+}
+
+/* 3. 最新消息區域樣式 */
+.news-box {
+      border: 1px solid #999999;
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .news-box .title {
+      font-size: 16px;
+      font-weight: bolder;
+      text-align: left;
+      margin-bottom: 10px;
+    }
+
+    .news-box .header {
+      background-color: #3399FF;
+      color: #FFFFFF;
+      font-size: 14px;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .news-item {
+      background-color: #FFFFCC;
+      font-size: 12px;
+      line-height: 2;
+      padding: 10px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .news-item img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .news-item:nth-child(even) {
+      background-color: #DDDDDD;
+    }
+
+    /* 4. 圖片展示區樣式 */
+    .gallery-box {
+      background-color: #333333;
+      padding: 20px;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+
+    .gallery-box .caption {
+      font-size: 14px;
+      color: #FFFF00;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .gallery-box img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+     /* 5. 縮圖展示區樣式 */
+     .thumbnails {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .thumbnails img {
+      width: 100px;
+      height: 100px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    .thumbnail {
+      text-align: center;
+          }
+
+    .thumbnail p {
+      font-size: 12px;
+      color: #FFFF00;
+      margin-top: 8px;
+    }
+
+    /* 6. 確保原圖展示區樣式 */
+    .main-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 20px 0;
+    }
+.container4{
+    width: 100%;
+    height: 45px;
+    background-color:lightgray;
+
+    text-align: center;
+    
+}
+
+    </style>
+</head>
+
+
+<body>
+
+    <div class="container1 ">
+        
+         <div> 
+            <a href="1109.html">
+               <img src="./1.logo.png" width="180px" height="90px" alt="運動廣場連結網-回首頁">
+            </a>
+         </div>   
+                
+        <div class="text">
+            「運動廣場連結網」
+        </div>     
+    </div>
+
+    
+    <div class="container2 ">
+        <ul class="menu">
+            <li><a href="./index.html" class="menu-item" onclick="showContent('home')">首頁</a></li>
+            <li><a href="./heal.html" class="menu-item" onclick="showContent('health')">健康天地</a></li>
+            <li><a href="./basketball.html" class="menu-item" onclick="showContent('basketball')">籃球介紹</a></li>
+            <li><a href="./baseball.html" class="menu-item" onclick="showContent('baseball')">棒球介紹</a></li>
+            <li><a href="./swim.html" class="menu-item" onclick="showContent('swimming')">游泳介紹</a></li>
+            <li><a href="./guestbook.html" class="menu-item" onclick="showContent('guestbook')">訪客留言</a></li>
+            <li><a href="./source.html" class="menu-item" onclick="showContent('sources')">資料來源</a></li>
+          </ul>
+    </div>
+
+
+
+    <div class="container3">
+       
+        <!-- 2. 最新消息區 -->
+    <div class="news-box">
+        <div class="title">最新消息</div>
+        <div class="header">
+          <span>主題 - 發布日期: <script>document.write(new Date().toLocaleDateString());</script></span>
+        </div>
+  
+        <!-- 3. 最新消息內容 -->
+        <div class="news-item">
+          <img src="0201.png" alt="最新消息圖片">
+          <div>
+            <strong>消息標題1</strong><br>
+            這是最新消息內容，顯示一些描述文字，這些文字可以來自 0201.txt 或直接輸入。
+          </div>
+        </div>
+  
+        <div class="news-item">
+          <img src="0201.png" alt="最新消息圖片">
+          <div>
+            <strong>消息標題2</strong><br>
+            這是第二條最新消息的內容，描述文字來自 0201.txt 或手動輸入。
+          </div>
+        </div>
+      </div>
+  
+      <!-- 4. 圖片展示區 -->
+      <div class="gallery-box">
+        <h2 class="caption">圖片展示區</h2>
+        
+        <!-- 5. 顯示原圖 -->
+        <img id="mainImage" class="main-image" src="0202A.png" alt="展示圖片">
+        
+        
+          <!-- 6. 縮圖展示區 -->
+      <div class="thumbnails">
+        <div class="thumbnail">
+          <img src="0202B.png" alt="縮圖1" onclick="showImage('0202A.png')">
+          <p>第30屆倫敦奧運<br>許淑淨奪舉重銀牌</p>
+        </div>
+        <div class="thumbnail">
+          <img src="0203B.png" alt="縮圖2" onclick="showImage('0203A.png')">
+          <p>第26屆深圳世大運</p>
+        </div>
+        <div class="thumbnail">
+          <img src="0204B.png" alt="縮圖3" onclick="showImage('0204A.png')">
+          <p>第27屆喀山世大運</p>
+        </div>
+        <div class="thumbnail">
+          <img src="0205B.png" alt="縮圖4" onclick="showImage('0205A.png')">
+          <p>第四張圖說內容</p>
+        </div>
+      </div>
+    </div>
+  
+    <script>
+      // 6. 點擊縮圖時顯示相應的原圖
+      function showImage(imageSrc) {
+        const mainImage = document.getElementById('mainImage');
+        mainImage.src = imageSrc;
+      }
+    </script>
+    </div>
+    <div class="container4">
+        <p>網頁設計與維護:XXOOO</p>
+        <p>最近更新日期:yyyy/mm/dd</p>
+        
+
+    </div>
+
+
+</body>
+</html>

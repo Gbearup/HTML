@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    .form-table{
+    width: 80%;
+    height: 500px;
+    background-color: lightblue;
+    /* position: relative; */
+    /* left:20%; */
+    margin-top: 5%;
+    margin-left: 20%;
+   
+    }
+
+    table {
+    width: 100%;
+    border-collapse: collapse; /* 去除儲存格間距 */
+    }
+
+    td {
+    padding: 2px; /* 儲存格內邊距 */
+    border: 1px solid #DDDDDD; /* 框線顏色 */
+    }
+
+    td:first-child {
+    width: 120px; /* 第一欄寬度 */
+    text-align: center; /* 讓標籤靠中 */
+    min-width: 120px; 
+    }
+
+    td:last-child {
+    width: 580px; /* 第二欄寬度 */
+    text-align: left;
+    }
+
+    
+        .marquee-wrapper {
+            width: 100%;  /* 讓跑馬燈佔滿整個寬度 */
+            overflow: hidden;  /* 隱藏超出範圍的部分 */
+            /* background-color: #f0f0f0; */
+            padding: 10px;
+        }
+        .marquee-text {
+            display: inline-block;
+            white-space: nowrap; /* 防止文字換行 */
+            font-size: 24px;
+            color: #333;
+            animation: marquee 15s linear infinite; /* 設置動畫 */
+        }
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%); /* 開始時文字在右邊 */
+            }
+            100% {
+                transform: translateX(-100%); /* 結束時文字移到左邊 */
+            }
+        }
+
+
+
+
+        .breadcrumb {
+            font-size: 18px; /* 字體大小 */
+            font-weight: bolder; /* 加粗字體 */
+            color: #FF0000; /* 字體顏色紅色 */
+        }
+
+        .breadcrumb a {
+            text-decoration: none; /* 去除連結下劃線 */
+            color: #FF0000; /* 連結顏色也為紅色 */
+        }
+
+        .breadcrumb span {
+            margin: 0 8px; /* 使分隔符號和文字之間有空間 */
+        }
+
+
+
+
+
+    </style>
+
+
+    <script>
+    function showMessage() {
+        alert("歡迎蒞臨本網站，您的寶貴意見我們會儘速處理與回覆，謝謝！");
+    }
+    </script>
+
+
+
+</head>
+
+
+<body>
+
+<!-- 使用 CSS 動畫實現跑馬燈 -->
+<div class="marquee-wrapper marquee-text">
+    謝謝蒞臨本網站，請給予我們支持、鼓勵與建言。
+</div>
+
+
+<!-- 路徑導覽列 -->
+<div class="breadcrumb">
+    <span>現在位置：</span>
+    <a href="./index.html">首頁</a>
+    <a href="./msqboard.html">>訪客留言</a>
+</div>
+
+
+
+
+    <form onsubmit="showMessage(); return false;">
+    <div class="form-table">
+    <table>
+        <tr>
+            <td>姓名</td>
+            <td><input type="text" name="name" id="name"  size="20" style="text-align: left"  required>
+            </input></td>
+        </tr>
+        <tr>
+            <td>電子郵件</td>
+            <td><input type="email" name="email" id="email" size="60" style="text-align: left" required></td>
+        </tr>
+        <tr>
+            <td>性別</td>
+            <td>
+                <input type="radio" name="gender" value="男" checked> 
+                <label style=" text-align: left;">男</label>
+                <input type="radio" name="gender" value="女">
+                <label> 女</label>
+            </td>
+        </tr>
+        <tr>
+            <td>職業類別</td>
+            <td>
+                <select name="mySelect" id="">
+                    <option value="army">1.現役軍人</option>
+                    <option value="pro">2.專業人員</option>
+                    <option value="tech">3.技術員及助理專業人員</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>留言內容</td>
+            <td>
+                <textarea name="myTextarea" id="" cols="78" rows="10" style="text-align: left"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit" >提交</button>
+                <input type="reset" value="重寫">
+            </td>
+            <td></td>
+        </tr>
+    </table>
+
+</div>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>勞動部勞動力發展署─運動廣場連結網</title>
+    <style>
+        /* 頁面背景顏色設置為深灰色 */
+        body {
+            background-color: #42413C; /* 深灰色背景 */
+            margin: 0;  /* 移除預設的外邊距 */        
+        }
+
+        /* 使用 Flexbox 實現頁面居中 */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;  /* 水平置中 */
+            justify-content: flex-start;
+            width: 100%;  /* 設定容器寬度 */
+            margin: 0 auto;  /* 左右自動外邊距使容器水平居中 */
+            /* padding: 20px; */
+        }
+
+        /* 網站標題區 */
+        .top {
+            display: flex;  /* 使用 flexbox 布局 */
+            align-items: center;  /* 使標識圖片和文字垂直置中 */
+            background-color: #00B0F0;  /* 藍色背景 */
+            color: white;  /* 白色文字 */
+            width: 100%;
+            height: 90px;
+            box-sizing: border-box;
+        }
+
+        /* 標識圖片 */
+        .logo {
+            width: 180px;  /* 設置標識圖片寬度 */
+            height: 90px;   /* 設置標識圖片高度 */
+            /* margin-right: 20px;  圖片和文字之間的間距 */
+             margin-top: 4px; 
+            
+        }
+
+        /* 橫幅文字設置 */
+        .banner-text {
+            font-size: 52px;  /* 字型大小 */
+            font-family: "標楷體", "Microsoft JhengHei", sans-serif;  /* 字體設置 */
+            color: #FFFFFF;  /* 文字顏色 */
+            text-shadow: 10px 10px 15px #333333;  /* 陰影效果 */
+            margin: 0;  /* 去除外邊距 */
+            /* 確保文字垂直置中，並且在右側區域 */
+            flex-grow: 1;  /* 使文字區域擴展填滿剩餘空間 */
+            text-align: center;  /* 使文字水平置中 */
+        }
+
+        /* 選單區樣式 */
+        .menu {
+            background-color: #42413C; /* 選單區背景顏色 */
+            text-align: center; /* 項目居中顯示 */
+            margin: 0;
+            display: flex;
+        }
+
+        .menu > div{
+            /* margin: 0 5px; 每個選單項目之間的間距 */
+            padding: 10px 5px; /* 項目的內邊距 */
+         }
+
+        /* 選單項目樣式 */
+        .menu a {
+            /*display: inline-block; 項目以橫向排列 */
+            /* margin: 0 5px; 每個選單項目之間的間距 */
+            padding: 13px 71px; /* 項目的內邊距 */
+            background-color: #EEEEEE; /* 預設背景顏色 */
+            color: #000000; /* 預設字型顏色 */
+            text-decoration: none; /* 去掉底線 */
+            font-size: 16px; /* 預設字型大小 */
+            }
+
+        /* 滑鼠移動到選單項目時的樣式 */
+        .menu a:hover {
+            background-color: #FFFF00; /* 背景顏色變更為黃色 */
+            font-size: 14px; /* 字型大小設為14px */
+            color: #FF0000; /* 字型顏色變更為紅色 */
+            font-weight: bold; /* 字體加粗 */
+            cursor: pointer; /* 指標改為手形 */
+        }
+
+         /* 點擊選單後跳轉效果（模擬連結跳轉） */
+         .menu a:active {
+            color: #FF0000; /* 點擊後字型顏色為紅色 */
+        }
+
+
+
+        /* 網頁內容區（首頁區）背景顏色設置為白色 */
+        .content {
+            width: 100%;  /* 頁面寬度 */
+            background-color: #FFFFFF; /* 背景顏色設定為白色 */
+            color: #000000; /* 字型顏色為黑色 */
+            font-size: 14px; /* 字型大小設為14px */
+            padding: 20px; /* 上、下、左、右內邊距至少20px */
+            
+            box-sizing: border-box; /* 包括邊框和內邊距在內計算寬度和高度 */
+            border: 1px solid #999; /* 設定邊框，顏色為 #ddd，1px 寬 */
+            border-radius: 5px; /* 邊框圓角設置，5px */
+            /* height: 608px; */
+        }
+        /* 頁尾區 */
+        .footer {
+            width: 100%;  /* 頁面寬度 */
+            height: 45px;
+            background-color: #CCCCCC;           
+            padding: 10px;
+            box-sizing: border-box;
+            border-radius: 5px;
+            
+        }
+        .footer p{
+            font-size: 12px;
+            text-align: center;
+            color: #FFFFFF;
+            margin: 1px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- 網站標題區 -->
+        <div class="top">
+            <!-- 點擊標識圖片會跳轉到首頁 -->
+            <a href="index.html">
+                <img src="./1.logo.png" alt="運動廣場連結網-回首頁" class="logo">
+            </a>
+            <!-- 橫幅文字 -->
+            <div class="banner-text">運動廣場連結網</div>
+        </div>
+
+        <!-- 選單區 -->
+        <div class="menu">
+            <div> <a href="./index.html">首頁</a>     </div>
+            <div> <a href="./basketball.html">籃球介紹</a> </div>
+            <div> <a href="./baseball.html">棒球介紹</a> </div>
+            <div> <a href="./health.html">健康天地</a> </div>
+            <div> <a href="./swimming.html">游泳介紹</a> </div>
+            <div> <a href="./msqboard.html">訪客留言</a> </div>
+            <div> <a href="./source.html">資料來源</a> </div>  
+        </div>
+
+        <!-- 網頁內容區 -->
+        <div class="content">
+            <iframe src="main.html" width="100%" height="608px"></iframe> <!-- 預設載入 main.html -->
+        </div>
+
+        <!-- 頁尾區 -->
+        <div class="footer">
+            <p>網頁設計及維護：01熊餔餔</p>
+            <p>最近更新日期：2024/11/10</p>
+        </div>
+    </div>
+
+    
+
+</body>
+</html>

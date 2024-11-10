@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圖片展示區與最新消息</title>
+    <style>
+      
+        /* 設置網頁內容的預設樣式 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFFFFF;
+            color: #000000;
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        .content {
+            width: 100%;
+            background-color: #FFFFFF;
+            padding: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+            display: flex;
+            gap: 114px; /* 用於讓兩個區塊之間有間距 */
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        /* 左側最新消息區 */
+        .latest-news {
+            width: 280px; /* 設定最新消息區的寬度為 280px */
+            height: 460px; /* 設定最新消息區的高度為 460px */
+            background-color: #f9f9f9;
+            border: 1px solid #999999;
+            border-radius: 5px;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto; /* 當內容超出區域時顯示滾動條 */
+        }
+
+        .latest-news h3 {
+            font-size: 16px;
+            font-weight: bolder;
+            text-align: left;
+        }
+        
+        .latest-news table{
+            border-collapse: collapse;
+        }
+
+        .latest-news th{
+            background-color: #3399FF;
+            font-size: 14px;
+            color: #FFFFFF;
+            text-align: center;
+        }
+
+        .latest-news td{
+        padding: 3px; /* 儲存格內邊距 */
+        font-size: 12px;
+        }
+
+        .latest-news tr:nth-child(odd) td {
+            background: linear-gradient(to bottom, #FFFFCC 50%, #DDDDDD 50%);
+            background-size: 100% 40px; /* 每條帶狀背景的高度 */
+        }
+
+        .latest-news tr:nth-child(even) td {
+            background: linear-gradient(to bottom, #DDDDDD 50%, #FFFFCC 50%);
+            background-size: 100% 40px; /* 每條帶狀背景的高度 */
+        }
+
+
+
+
+
+        .latest-news   td:first-child {
+            width: 75%; /* 第一欄寬度 */
+            text-align: left; /* 靠左 */
+            
+        }
+
+        .latest-news td:last-child {
+            width: 25%; /* 第二欄寬度 */
+            text-align: right;
+        }
+
+
+        /* 右側圖片展示區 */
+        .image-gallery {
+            width: 590px; /* 設定圖片展示區的寬度為 590px */
+            height: 460px; /* 設定圖片展示區的高度為 460px */
+            background-color: #333333;
+            padding: 5px;
+            box-sizing: border-box;
+            border: 1px solid #999999;
+            border-radius: 5px;
+            overflow: hidden; /* 隱藏超出區域的內容 */
+        }
+
+        .image-gallery h3 {
+            font-size: 16px;
+            font-weight: bolder;
+            color: #FFFFFF;
+            text-align: center;
+        }
+
+        /* 原圖顯示 */
+        .main-image {
+            text-align: center;
+            margin-bottom: 10px; /* 增加一點間距，讓縮圖區和原圖區不擠在一起 */
+        }
+
+        .main-image img {
+            max-width: 90%; /* 設定圖片寬度為90%，讓圖片大小適中 */
+            height: auto;
+            border: 1px solid #FFFFFF;
+            border-radius: 5px;
+        }
+
+        /* 縮圖區 */
+        .thumbnails {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px; /* 增加縮圖區和原圖之間的距離 */
+            gap: 5px;
+        }
+
+        .thumbnail-container {
+            text-align: center;
+        }
+
+        .thumbnails img {
+            width: 120px; /* 縮圖的大小 */
+            height: 80px;
+            cursor: pointer;
+            border: 1px solid #FFFFFF;
+            border-radius: 5px;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .thumbnails img:hover {
+            transform: scale(1.1); /* 鼠標懸停縮圖放大效果 */
+        }
+
+        /* 圖說 */
+        .caption {
+            text-align: center;
+            font-size: 14px;
+            color: #FFFF00; /* 讓圖說的顏色為黃色，與背景有足夠對比 */
+            margin-top: 5px; /* 增加圖說與縮圖之間的間距 */
+            line-height: 1.5; /* 確保圖說文字有良好的可讀性 */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+    <!-- 最新消息區 -->
+    <div class="latest-news">
+        <h3>最新消息</h3>
+
+        <table>
+            <tr>
+                <th>主題</th>
+                <th>發布日期</th>
+            </tr>
+            <tr>
+                <td><img src="0201.png" alt="左箭頭" style="float: left;">公告全國技能競賽相關事宜</td>
+                <td>2024/11/10</td>
+            </tr>
+            <tr>
+                <td><img src="0201.png" alt="左箭頭" style="float: left;">公告即測即評及發證相關事宜</td>
+                <td>2024/11/10</td>
+            </tr>
+            <tr>
+                <td><img src="0201.png" alt="左箭頭" style="float: left;">公告網頁設計修題相關事宜</td>
+                <td>2024/11/10</td>
+            </tr>
+            <tr>
+                <td><img src="0201.png" alt="左箭頭" style="float: left;">公告網路架設應檢相關事宜</td>
+                <td>2024/11/10</td>
+            </tr>
+        </table>
+
+
+        
+    </div>
+
+    <!-- 圖片展示區 -->
+    <div class="image-gallery">
+        <!-- 顯示原圖 -->
+        <div class="main-image">
+            <img id="main-image" src="0202A.png" alt="展示圖片1">
+        </div>
+
+        <!-- 顯示縮圖 -->
+        <div class="thumbnails">
+            <div class="thumbnail-container">
+                <img src="0202B.png" alt="縮圖1" onclick="changeImage('0202A.png')">
+                <p class="caption">第30屆倫敦奧運</p> <!-- 圖說 -->
+            </div>
+            <div class="thumbnail-container">
+                <img src="0203B.png" alt="縮圖2" onclick="changeImage('0203A.png')">
+                <p class="caption">許淑淨奪舉重銀牌</p> <!-- 圖說 -->
+            </div>
+            <div class="thumbnail-container">
+                <img src="0204B.png" alt="縮圖3" onclick="changeImage('0204A.png')">
+                <p class="caption">第26屆深圳世大運</p> <!-- 圖說 -->
+            </div>
+            <div class="thumbnail-container">
+                <img src="0205B.png" alt="縮圖4" onclick="changeImage('0205A.png')">
+                <p class="caption">第27屆喀山世大運</p> <!-- 圖說 -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // JavaScript 函數：當點擊縮圖時，切換顯示的原圖
+    function changeImage(image) {
+        document.getElementById('main-image').src = image;
+    }
+</script>
+
+
+
+</body>
+</html>
+
+
+
