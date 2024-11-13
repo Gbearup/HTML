@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        fieldset {
+            font-family: '微軟正黑體';
+            font-weight: bolder;
+
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <tr>
+        <td><img src="./s20241021/image/pp.png" alt="" srcsect=""></td>
+    </tr>
+    <fieldset>
+        <legend> HR form</legend>
+        <form action="./getData.php">
+
+            <!-- input text -->
+            <label for="name">
+
+            </label>
+
+            <p>
+                <label for="">姓名:</label>
+                <input type="text" name="myText" id="" value="">
+            </p>
+
+            <p>
+                <label for="">電話:</label>
+                <input type="number" name="MyNumber" id="" value="">
+
+            </p>
+            <p>
+                <label for="">身分證字號:</label>
+                <input type="number" name="MyNumber" id="" value="">
+
+
+            </p>
+            <p>
+                <label for="">電子郵件:</label>
+                <input type="number" name="MyNumber" id="" value="">
+
+            </p>
+
+            <hr>
+            <p>
+                <label for="">工作經歷:</label>
+                <input type="text" name="myText" id="" value="">
+            </p>
+
+
+
+            <p>
+                應徵項目
+
+
+            </p>
+            <p>
+                <input type="radio" name="myradio" id="" value="html">
+                <label for="">正職</label>
+                <input type="radio" name="myradio" id="" value="css">
+                <label for="">計時</label>
+
+
+            </p>
+
+            <p>
+                工作經歷 (複選)
+
+            </p>
+            <p>
+
+                <input type="checkbox" name="habit[]" id="" value="book">
+                <label for="">餐飲</label>
+                <input type="checkbox" name="habit[]" id="" value="tv">
+                <label for="">行政人員</label>
+                <input type="checkbox" name="habit[]" id="" value="sleep">
+                <label for="">資訊業</label>
+                <input type="checkbox" name="habit[]" id="" value="game">
+                <label for="">其他:</label>
+            </p>
+
+            <p>
+                年資 下拉選單
+            </p>
+            <p>
+                <select name="" id="">
+                    <option value="amy">1年以下</option>
+                    <option value="bob">1-2年</option>
+                    <option value="cat">2年以上</option>
+                </select>
+
+            </p>
+            <hr>
+
+            <p>
+                自傳
+
+            </p>
+            <p>
+                <textarea name="mytextarea" id="" cols="50 " rows="5"></textarea>
+
+            </p>
+
+
+            <p>
+
+                <input type="submit" value="submit">
+
+            </p>
+        </form>
+    </fieldset>
+</body>
+
+</html>

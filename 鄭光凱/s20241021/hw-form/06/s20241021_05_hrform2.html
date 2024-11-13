@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR系統-員工基本資料</title>
+    <style>
+        span {
+            display: inline-block;
+            width: 10%;
+            text-align: center;
+            background-color: lightblue;
+        }
+
+        input[type="text"] {
+            width: 70%;
+        }
+
+        input[type="number"] {
+            width: 70%;
+        }
+
+        input[type="date"] {
+            width: 70%;
+        }
+
+        body {
+            background-color: #f2f2f2;
+            margin: 0;
+            height: 100vh;
+        }
+
+        fieldset {
+            margin: auto;
+            width: 80%;
+            background-color: #deedf8;
+            border: 2px solid #1c6799;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        legend {
+            font-weight: bold;
+            font-size: 30px;
+            color: #074e7d;
+        }
+
+        .form-group {
+            display: table;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            display: table-cell;
+            width: 120px;
+            /* 設定label的寬度 */
+            text-align: right;
+            padding-right: 10px;
+        }
+
+        .form-group input {
+            display: table-cell;
+            width: calc(100% - 130px);
+            /* input寬度為剩餘部分 */
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend>HR 系統</legend>
+
+        <form action="./s20241021_05_hrform3.html" method="GET">
+
+            <div class="form-group">
+                <label for="">員工編號：</label>
+
+                <input type="text" name="myId" id="" placeholder="員工編號">
+            </div>
+            <div class="form-group">
+                <label for="">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label>
+                <input type="text" name="myName" id="" placeholder="姓名">
+            </div>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;別：
+                <input type="radio" name="myRadio" id="" value="男">
+                <label for="">男</label><input type="radio" name="myRadio" id="" value="女"><label for="">女</label>
+            </p>
+            <div class="form-group">
+                <label for="">生&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日：</label>
+
+                <input type="date" name="myBirthday" id="" placeholder="2000-01-01">
+            </div>
+            <div class="form-group">
+                <label for="">電&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;話：</label>
+
+                <input type="text" name="myNumber" id="" placeholder="0900-123456">
+            </div>
+            <div class="form-group">
+                <label for="">電子郵件：</label>
+                </span>
+                <input type="email" name="myEmail" id="" placeholder="email@.com">
+            </div>
+            <div class="form-group">
+                <label for="">照&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;片：</label>
+                <input type="file" name="myPhoto" id="">
+            </div>
+            <p>
+                <input type="submit" value="下一步">
+            </p>
+        </form>
+    </fieldset>
+</body>
+
+</html>

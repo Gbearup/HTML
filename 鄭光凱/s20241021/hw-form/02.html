@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        .container1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input {
+            padding: 20px;
+        }
+
+        .position {
+            width: 213px;
+            height: 59px;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="./getdata.php">
+        <h1>Job Application Form</h1>
+        <p>Please Fill Out the Form Below to Submit Your Job Application!</p>
+        <hr>
+        <p>Name:</p>
+        <div class="container1">
+            <input type="text" value="名字" name="Name">
+            <input type="text" value="姓名" name="NamePart2">
+        </div>
+        <div class="container1">
+            <p>E-mail:</p>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <p>Phome Number:</p>
+        </div>
+        <div class="container1">
+            <input type="text" value="信箱" name="email">
+            <input type="text" value="手機電話" name="phone">
+        </div>
+        <div class="container1">
+            <p>Applied Position:</p>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <p>Earliest Possible Start Date:</p>
+        </div>
+        <div class="container1">
+            <input class="position" type="text" value="應徵的職位" name="position">
+            <input class="position" type="date" name="position_date" id="" value="2000-01-01">
+        </div>
+        <p>Preferred Interview Date </p>
+        <div class="container1">
+            <input class="position" type="date" name="interview_date" id="" value="2000-01-01">
+        </div>
+        <p>cover letter</p>
+        <p>
+            <textarea name="myTextarea" id="" cols="50" rows="5"></textarea>
+        </p>
+        <p>
+            <input type="submit" value="Submit">
+        </p>
+    </form>
+</body>
+
+</html>

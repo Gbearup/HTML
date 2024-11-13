@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>absolute</title>
+    <style>
+        .beige-box {
+            /* 將米框框置中 */
+            margin: auto;
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: beige;
+        }
+
+        .pink-box {
+            border-radius: 50px;
+            position: absolute;
+            right: 0%;
+            bottom: 0%;
+            width: 150px;
+            height: 150px;
+            background-color: rgb(251, 161, 161);
+            opacity: 0.5;
+            text-align: center;
+            line-height: 150px
+        }
+
+        .green-box {
+            border-radius: 50px;
+            position: absolute;
+            right: 0%;
+            top: 0%;
+            width: 150px;
+            height: 150px;
+            background-color: rgb(166, 254, 166);
+            opacity: 0.5;
+            text-align: center;
+            line-height: 150px
+        }
+
+        .blue-box {
+            border-radius: 50px;
+            position: absolute;
+            left: 0%;
+            bottom: 0%;
+            width: 150px;
+            height: 150px;
+            background-color: lightblue;
+            opacity: 0.5;
+            text-align: center;
+            line-height: 150px
+        }
+
+        .orange-box {
+            border-radius: 50px;
+            position: absolute;
+            left: 0%;
+            top: 0%;
+            width: 150px;
+            height: 150px;
+            background-color: rgb(255, 190, 70);
+            opacity: 0.5;
+            text-align: center;
+            line-height: 150px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="beige-box">
+        <img src="./notion-cover1.jpg" width="800px" height="600px">
+
+        <div class="pink-box">❤</div>
+        <div class="green-box">❤</div>
+        <div class="blue-box">❤</div>
+        <div class="orange-box">❤</div>
+    </div>
+
+</body>
+
+</html>

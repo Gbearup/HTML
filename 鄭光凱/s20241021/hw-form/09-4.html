@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Company_HR sys</title>
+    <style>
+        fieldset {
+            font-size: large;
+            border-radius: 10%;
+            border-color: rgb(0, 106, 255);
+            background-color: aquamarine;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        span {
+            display: inline-block;
+            width: 10%;
+            text-align: center;
+            background-color: rgb(240, 249, 172);
+        }
+
+        input[type="text"] {
+            /* width: 500px; */
+            width: 10%;
+        }
+
+        input[type="number"] {
+            /* width: 500px; */
+            width: 10%;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend>ABC_HR Sys</legend>
+        <form action="./getData.php">
+
+            <!-- input -->
+            <!-- input text -->
+            <!-- input number -->
+            <!-- input datetime -->
+            <!-- input radio -->
+            <!-- input checkbox -->
+            <!-- input submit -->
+
+            <!-- select -->
+            <!-- textarea -->
+
+
+            <!-- input -->
+            <!-- input text -->
+            <p>
+                <span>
+                    <label for="name">員工姓名</label>
+                </span>
+                <input type="text" name="myName" id="" value="">
+            </p>
+
+            <!-- input number -->
+            <p>
+                <span>
+                    <label for="number">員工到職號</label>
+                </span>
+                <input type="number" name="myNumber" id="" value="">
+            </p>
+            <!-- input date -->
+            <p>
+                <span>
+                    <label for="date">生日</label>
+                </span>
+                <input type="date" name="myDate" id="" value="">
+            </p>
+            <!-- input radio 單選 name 要一樣-->
+            <p>
+                最高學歷
+            </p>
+            <p>
+                <input type="radio" name="myRadio" id="" value="博士">
+                <label for="">博士</label>
+                <input type="radio" name="myRadio" id="" value="碩士">
+                <label for="">碩士</label>
+                <input type="radio" name="myRadio" id="" value="大學">
+                <label for="">大學</label>
+            </p>
+            <!-- input checkbox 複選 name []-->
+            <p>
+                程式語言技能
+            </p>
+            <p>
+                <input type="checkbox" name="language[]" id="" value="C++">
+                <label for="">C++</label>
+                <input type="checkbox" name="language[]" id="" value="php">
+                <label for="">php</label>
+                <input type="checkbox" name="language[]" id="" value="python">
+                <label for="">python</label>
+                <input type="checkbox" name="language[]" id="" value="html">
+                <label for="">html</label>
+            </p>
+
+            <!-- select / (input text) -->
+            <p>
+                職務部門
+            </p>
+            <p>
+                <!-- <input type="text" name="mySelect" id="" value="goSelect"> -->
+                <select name="mySelect" id="">
+                    <option value="研發設計">研發設計</option>
+                    <option value="採購">採購</option>
+                    <option value="製造">製造</option>
+                </select>
+            </p>
+            <!-- textarea -->
+            <p>
+                員工建議
+            </p>
+            <p>
+                <textarea name="myTextarea" id="" cols="50" rows="5"></textarea>
+            </p>
+
+
+            <!-- input submit-->
+            <p>
+                <input type="submit" value="submit">
+            </p>
+
+
+        </form>
+    </fieldset>
+</body>
+
+</html>
+
+<body>
+
+
+
+
+</body>
+
+</html>

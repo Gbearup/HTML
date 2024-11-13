@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type='text'] {
+            width: 80%;
+        }
+
+        input[type='number'] {
+            width: 80%;
+        }
+
+        span {
+            display: inline-block;
+            width: 10%;
+            text-align: center;
+            background: skyblue;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend>HR form:</legend>
+        <form action="./getData.php">
+            <p>
+                <span>
+                    <label for="myName">姓名:
+                    </label>
+                </span>
+
+                <input type="text" name="myName" id="">
+            </p>
+            <p>
+                <span>
+                    <label for="">電話:
+                    </label>
+                </span>
+                <input type="text" name="mobile" id="">
+
+            </p>
+
+            <p>
+                <span>
+                    <label for="">生日:
+                    </label>
+                </span>
+                <input type="date" name="date" id="">
+            </p>
+
+            <p>
+                <span>
+                    <label for=""> 選擇檔案(作品集):
+                    </label>
+                </span>
+                <input type="file" name="myfile" id="">
+
+
+
+            </p>
+
+
+
+
+            <p> 學歷</p>
+
+            <p>
+                <input type="radio" name="eduction" id="" value="國中">
+                <label for="">國中</label>
+                <input type="radio" name="eduction" id="" value="高中">
+                <label for="">高中</label>
+
+
+                <input type="radio" name="eduction" id="" value="大學">
+                <label for="">大學</label>
+
+
+                <input type="radio" name="eduction" id="" value="研究所">
+                <label for="">研究所</label>
+                <input type="radio" name="eduction" id="" value="其他">
+                <label for="">其他</label>
+
+            </p>
+
+            <p>興趣：</p>
+            <p>
+                <input type="checkbox" name="habit[]" value="看書">
+                <label for="">看書
+
+                </label>
+                <input type="checkbox" name="habit[]" value="睡覺">
+                <label for="">睡覺
+
+                </label>
+                <input type="checkbox" name="habit[]" value="音樂">
+                <label for="">音樂
+
+                </label>
+
+                <input type="checkbox" name="habit[]" value="看電視">
+                <label for="">看電視
+
+                </label>
+
+                <input type="checkbox" name="habit[]" value="打遊戲">
+                <label for="">打遊戲
+
+                </label>
+            </p>
+
+            <p>
+                <label for=""> 介紹人:</label>
+                <select name="student" id="student">
+                    <option value="amy">amy</option>
+                    <option value="john">john</option>
+                    <option value="simon">simon</option>
+                    <option value="none">none</option>
+                </select>
+
+            </p>
+            <p>
+
+                <label for="comment">自傳:</label>
+            </p>
+            <p>
+                <textarea name="comment" id="comment" rows="4" cols="50"></textarea>
+            </p>
+            <input type="submit" value="送出">
+        </form>
+
+    </fieldset>
+
+</body>
+
+</html>

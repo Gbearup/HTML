@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+   body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #FEF3D1;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #FFE4E1;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #85653E;
+}
+h1 {
+    text-align: center;
+    max-width: 800px;
+    color: #85653E;
+}
+label {
+    display: block;
+    margin: 10px 0 5px;
+    
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    color: #85653E;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #555;
+}
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>HR form </legend>
+    <div class="container">
+        <h1>履歷表</h1>
+        <form id="resume-form">
+            <label for="name">姓名：</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="title">職業/職稱：</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="phone">聯絡電話：</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="email">電子郵件：</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="linkedin">LinkedIn：</label>
+            <input type="url" id="linkedin" name="linkedin">
+
+            <label for="summary">個人簡介：</label>
+            <textarea id="summary" name="summary" rows="4" required></textarea>
+
+            <h2>工作經驗</h2>
+            <div class="job-experience">
+                <label for="job-title">職位名稱：</label>
+                <input type="text" id="job-title" name="job-title" required>
+                
+                <label for="company">公司名稱：</label>
+                <input type="text" id="company" name="company" required>
+                
+                <label for="job-dates">日期：</label>
+                <input type="text" id="job-dates" name="job-dates" required>
+                
+                <label for="job-description">工作描述：</label>
+                <textarea id="job-description" name="job-description" rows="4" required></textarea>
+            </div>
+
+            <h2>學歷</h2>
+            <div class="education">
+                <label for="school">學校名稱：</label>
+                <input type="text" id="school" name="school" required>
+                
+                <label for="degree">學位：</label>
+                <input type="text" id="degree" name="degree" required>
+                
+                <label for="graduation-year">畢業年份：</label>
+                <input type="text" id="graduation-year" name="graduation-year" required>
+            </div>
+
+            <h2>技能</h2>
+            <textarea id="skills" name="skills" rows="4" placeholder="以逗號分隔各項技能"></textarea>
+
+            <button type="submit">提交</button>
+        </form>
+    </div>
+</body>
+</html>

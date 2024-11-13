@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> HR Info Form </title>
+    <style>
+        body {
+            background: grey
+        }
+
+        legend {
+            background: blue;
+            color: aliceblue;
+            font-size: 40px;
+        }
+
+        fieldset {
+            width: 80%;
+            margin: auto;
+            border-style: dashed;
+            background:antiquewhite;
+        }
+
+        input[type='number'] {
+            width: 50px;
+        }
+
+        .submit {
+            font-size: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend> HR Info Form </legend>
+        <form action="./1021-getData.php">
+            <p style="background-color:lightcyan; font-size: 20px;">
+                Personal Information
+            </p>
+            <!-- Text: Name -->
+            <p>
+                <label for="name">Name: </label>
+                <input type="text" name="name" id="name">
+            </p>
+
+            <!-- Radio: Gender -->
+            <p>
+                <label for="gender"> Gender: </label>
+                <input type="radio" name="gender" id="gender" value="Female">
+                <label for="gender"> Female </label>
+                <input type="radio" name="gender" id="gender" value="Male">
+                <label for="gender"> Male </label>
+            </p>
+
+            <!-- Text: Mobile -->
+            <p>
+                <label for="mobile"> Mobile: </label>
+                <input type="tel" name="mobile" id="mobile" placeholder="0900-123-456"
+                    pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}" required>
+            </p>
+
+            <!-- Date: Birth -->
+            <p>
+                <label for="bitrh">Birth Date:</label>
+                <input type="date" name="birth" id="birth">
+            </p>
+
+            <!-- email: Email Address -->
+            <p>
+                <label for="email"> E-mail Address: </label>
+                <input type="email" name="email" id="email">
+            </p>
+
+            <!-- Text: Address -->
+            <p>
+                <label for="address"> Address: </label>
+                <input type="number" name="address" id="address" placeholder="114" size="6">
+                <input type="text" name="address" id="address">
+            </p>
+
+            <!-- select: skills -->
+            <p>
+                <label for="skill">Skills You Have: </label>
+                <input type="checkbox" name="skill" id="skill" value="Excel">
+                <label for="Excel">Excel</label>
+                <input type="checkbox" name="skill" id="skill" value="HTML">
+                <label for="HTML">HTML</label>
+                <input type="checkbox" name="skill" id="skill" value="CSS">
+                <label for="CSS">CSS</label>
+                <input type="checkbox" name="skill" id="skill" value="Java">
+                <label for="Java">Java</label>
+                <input type="checkbox" name="skill" id="skill" value="Photoshop">
+                <label for="Photoshop">Photoshop</label>
+                <input type="checkbox" name="skill" id="skill" value="PHP">
+                <label for="PHP">PHP</label>
+            </p>
+
+            <hr>
+            <p style="background-color:lightcyan; font-size: 20px;">
+                Employment Desired:
+            </p>
+
+            <!-- select: desired position -->
+            <p>
+                <label for="position">Position Applying For: </label>
+                <input type="radio" name="position" id="position" value="Job1">
+                <label for="position"> Job1 </label>
+                <input type="radio" name="position" id="position" value="Job2">
+                <label for="position"> Job2 </label>
+                <input type="radio" name="position" id="position" value="Job3">
+                <label for="position"> Job3 </label>
+            </p>
+
+            <!-- date: date started -->
+            <p>
+                <label for="startDate">Date You Can Start: </label>
+                <input type="date" name="startDate" id="startDate">
+            </p>
+
+            <!-- number: desired salary -->
+            <p>
+                <label for="salary"> Desired Salary (in TWD): </label>
+                <input type="number" name="salary" id="salary" placeholder="$0">
+            </p>
+
+            <!-- select: where hear about us-->
+            <p>
+                <label for="wayHear">Where Did You Hear About Us? </label>
+                <select name="wayHear" id="wayHear">
+                    <option value="LinkedIn">LinkedIn</option>
+                    <option value="Facebook">Facebook</option>
+                    <option value="104JobBank">104 Job Bank</option>
+                    <option value="CareerFair">Career Fair</option>
+                    <option value="Friends">Friends</option>
+                    <option value="Others">Others</option>
+                </select>
+            </p>
+            <hr>
+            <p style="background-color:lightcyan; font-size: 20px;">
+                Education
+            </p>
+            <!-- Text: School -->
+            <!-- Text: Major -->
+            <p>
+                <label for="college"> College: </label>
+                <input type="text" name="college" id="college">
+
+                <label for="degree"> Degree: </label>
+                <input type="text" name="degree" id="degree">
+            </p>
+
+            <!-- Date: Year graduated -->
+            <p>
+                <label for="graduate"> Date Graduated: </label>
+                <input type="month" name="graduate" id="graduate">
+            </p>
+
+            <p>
+                <label for="highschool"> High School: </label>
+                <input type="text" name="highschool" id="highschool">
+
+                <label for="HSdegree"> Degree: </label>
+                <input type="text" name="HSdegree" id="HSdegree">
+            </p>
+
+            <!-- Date: Year graduated -->
+            <p>
+                <label for="HSgraduate"> Date Graduated: </label>
+                <input type="month" name="HSgraduate" id="HSgraduate">
+            </p>
+
+            <hr>
+            <p style="background-color:lightcyan; font-size: 20px;">
+                Employment History
+            </p>
+
+            <!-- Text: Work Experience -->
+            <p>
+                <label for="company1">Current Employment: </label>
+                <textarea name="company1" id="company1" cols="70" rows="5"></textarea>
+            </p>
+
+            <p>
+                <label for="company2">Previous Employment: </label>
+                <textarea name="company2" id="company2" cols="70" rows="5"></textarea>
+            </p>
+
+            <p>
+                <label for="company3">Previous Employment: </label>
+                <textarea name="company3" id="company3" cols="70" rows="5"></textarea>
+            </p>
+
+            <hr>
+            <p style="background-color:lightcyan; font-size: 20px;">
+                Resume & Cover Letter
+            </p>
+
+            <!-- Textarea: Detail -->
+            <p>
+                <label for="workDetail"></label>
+            </p>
+
+            <!-- File: resume -->
+            <p>
+                <span>
+                    <label for="resume">Resume: </label>
+                </span>
+                <input type="file" name="resume" id="resume">
+            </p>
+
+            <!-- File: cover letter -->
+            <p>
+                <span>
+                    <label for="cv">Cover Letter: </label>
+                </span>
+                <input type="file" name="cv" id="cv">
+            </p>
+
+            <!-- additional file -->
+            <p>
+                <span>
+                    <label for="resume">Additional File: </label>
+                </span>
+                <input type="file" name="otherFile" id="otherFile">
+            </p>
+
+            <!-- submit -->
+            <div class="submit">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </fieldset>
+</body>
+
+</html>

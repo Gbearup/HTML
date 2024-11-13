@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox 垂直居中 DIV</title>
+    <style>
+        body, html {
+            height: 100%; /* 使 html 和 body 占滿整個高度 */
+            margin: 0;
+        }
+
+        .container {
+            height: 50%; /* 父容器高度為 50% */
+            display: flex;
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
+            background-color: #d0e0f0; /* 背景顏色 */
+        }
+
+        .centered-div {
+            padding: 20px;
+            background-color: lightblue;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="centered-div">
+        我被居中啦！
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR系統-員工工作資訊</title>
+    <style>
+        span {
+            display: inline-block;
+            width: 10%;
+            text-align: center;
+        }
+
+        input[type="text"] {
+            width: 70%;
+        }
+
+        input[type="number"] {
+            width: 70%;
+        }
+
+        input[type="date"] {
+            width: 70%;
+        }
+
+        body {
+            background-color: #f2f2f2;
+            margin: 0;
+            height: 100vh;
+        }
+
+        fieldset {
+            margin: auto;
+            width: 80%;
+            background-color: #deedf8;
+            border: 2px solid #1c6799;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        legend {
+            font-weight: bold;
+            font-size: 30px;
+            color: #074e7d;
+        }
+
+        .form-group {
+            display: table;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            display: table-cell;
+            width: 120px;
+            /* 設定label的寬度 */
+            text-align: right;
+            padding-right: 10px;
+        }
+
+        .form-group input {
+            display: table-cell;
+            width: calc(100% - 130px);
+            /* input寬度為剩餘部分 */
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend>HR 系統</legend>
+
+        <form action="./s20241021_05_hrform4.html" method="GET">
+            <p>
+                <label for="">到職日期：</label>
+                <input type="date" name="myDate" id="" placeholder="2024-01-01">
+            </p>
+            <p><span>部&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;門：&nbsp;</span>
+                <select name="myDepartment" id="">
+                    <option value="hr">人力資源部</option>
+                    <option value="fin">財務管理部</option>
+                    <option value="rd">技術研發部</option>
+                    <option value="mkt">行銷推廣部</option>
+                    <option value="ops">營運管理部</option>
+                    <option value="sls">銷售業務部</option>
+                    <option value="it">資訊管理部</option>
+                </select>
+            </p>
+            <p>
+                <span>
+                    <label for="">職&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;等：</label>
+                </span>
+                <input type="number" name="myJoblevel" id="" value="4" min="1" max="9">
+            </p>
+            <p>
+                <span>
+                    <label for="">薪&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;資：</label>
+                </span>
+                <input type="text" name="mySalary" id="" placeholder="薪資">
+            </p>
+            <p>
+                辦公地點：
+                <input type="checkbox" name="location[]" id="" value="hq">
+                <label for="">總公司</label>
+                <input type="checkbox" name="location[]" id="" value="cro">
+                <label for="">中區分公司</label>
+                <input type="checkbox" name="location[]" id="" value="sro">
+                <label for="">南區分公司</label>
+                <input type="checkbox" name="location[]" id="" value="wfh">
+                <label for="">遠距辦公</label>
+            <p>
+                <label for="">備註：</label>
+            </P>
+            <P>
+                <textarea name="myTextarea" id="" cols="60" rows="5"></textarea>
+            </p>
+            <input type="submit" value="確認新增">
+            </p>
+        </form>
+    </fieldset>
+
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+legend {
+    color: #0037ff;
+}
+
+label {
+    color: rgb(0, 152, 198);
+    /* display: inline-block;
+    width: 10%;
+    text-align: center;
+    background-color: rgb(255, 255, 255); */
+
+}
+
+textarea {
+    color: silver;
+}
+
+body {
+    background-image: url("./03-02.jpg");
+    background-attachment: fixed;
+    background-size: 1280px;
+}

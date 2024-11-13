@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+
+            border-collapse: collapse;
+            width: 50%;
+            text-align: center;
+            margin: auto;
+        }
+
+        tr,
+        td {
+            border: 1px solid black;
+            height: 20vh;
+            font-size: 30px;
+
+
+        }
+
+        /* 
+        td a {
+            text-decoration: none;
+            color: #333;
+            font-size: 24px;
+            font-weight: bold;
+            display: block;
+            /* 使 a 標籤佔滿整個 td /
+            height: 100%;
+            / 確保 a 標籤高度填滿 td /
+            width: 100%;
+            / 確保 a 標籤寬度填滿 td /
+            padding: 20px;
+            / 內邊距讓文字不緊貼邊緣 /
+            box-sizing: border-box;
+            / 包含內邊距在寬度計算內 /
+        } */
+
+        td:hover {
+            background-color: lightblue;
+            /* 當鼠標懸停時改變背景顏色 */
+            color: white;
+            opacity: 0.9;
+            /* 變更文字顏色 */
+        }
+
+        h2 {
+            text-align: center;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes fadeIn {
+
+            0% {
+                opacity: 0;
+                /* 開始時完全透明 */
+                translateY(-15px);
+            }
+
+            50% {
+                opacity: 1;
+                /* 中間時完全可見 */
+                translateY(15px);
+            }
+
+            100% {
+                opacity: 0;
+                /* 結束時再次透明 */
+                translateY(0);
+            }
+
+        }
+
+        @keyframes bounce {
+
+            0%,
+            10%,
+            20%,
+            30%,
+            40%,
+            50%,
+            60%,
+            70%,
+            80%,
+            90%,
+            100% {
+                transform: translateY(0);
+                opacity: 0;
+                /* 初始位置 */
+            }
+
+            90% {
+                transform: translateY(-10px);
+                opacity: 0.2;
+                /* 向上移動 */
+            }
+
+            80% {
+                transform: translateY(-10px);
+                opacity: 0.4;
+                /* 向上移動 */
+            }
+
+            70% {
+                transform: translateY(-10px);
+                opacity: 0.6;
+                /* 向上移動 */
+            }
+
+            60% {
+                transform: translateY(-10px);
+                opacity: 0.8;
+                /* 向上移動 */
+            }
+
+            50% {
+                transform: translateY(0px);
+                opacity: 1;
+                /* 向上移動 */
+            }
+
+            40% {
+                transform: translateY(10px);
+                opacity: 0.8;
+                /* 小幅度向上移動 */
+            }
+
+            30% {
+                transform: translateY(10px);
+                opacity: 0.6;
+                /* 小幅度向上移動 */
+            }
+
+            20% {
+                transform: translateY(10px);
+                opacity: 0.4;
+                /* 小幅度向上移動 */
+            }
+
+            10% {
+                transform: translateY(10px);
+                opacity: 0.2;
+                /* 小幅度向上移動 */
+            }
+
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+        }
+
+        .animated {
+            animation: bounce 1s ease-in-out infinite;
+            /* animation: fadeIn 5s ease-in-out, bounce 2s infinite; */
+            /* 使用多個動畫 */
+            font-size: 48px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .f1bg {
+            background-image: url('https://www.dalang.tw/wp-content/uploads/2024/09/fullfullhotpot.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 50%;
+            opacity: 0.3;
+
+
+        }
+
+        .f2bg {
+            background-image: url('https://www.dalang.tw/wp-content/uploads/2024/10/IMG_9657.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 50%;
+            opacity: 0.3;
+        }
+
+        .f3bg {
+            background-image: url('https://www.dalang.tw/wp-content/uploads/2024/10/IMG_9971.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 50%;
+            opacity: 0.3;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h2 class="animated">大飯店</h2>
+    <table>
+        <tr>
+            <td class="f1bg"> <a href="./f3.html">3F火鍋</a></td>
+
+        </tr>
+        <tr>
+            <td class="f2bg"> <a href=" ./f2.html">2F拉麵</a></td>
+
+        </tr>
+        <tr>
+            <td class="f3bg"> <a href="./f1.html">1F早午餐</a></td>
+
+        </tr>
+
+    </table>
+</body>
+
+</html>

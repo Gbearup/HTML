@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .fixed-box {
+            position: fixed;
+            right: 0%;
+            bottom: 0%;
+        }
+
+        .green-box {
+            /* margin: auto; */
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: lightgreen;
+        }
+
+        .pink-box {
+            position: absolute;
+            right: 5%;
+            bottom: 10%;
+            width: 150px;
+            height: 150px;
+            /* border-radius: 50%; */
+            background-color: lightpink;
+        }
+
+        .blue-box {
+            position: absolute;
+            left: 5%;
+            top: 10%;
+            width: 150px;
+            height: 150px;
+            /* border-radius: 50%; */
+            background-color: blue;
+        }
+
+        .yellow-box {
+            position: absolute;
+            left: 5%;
+            bottom: 10%;
+            width: 150px;
+            height: 150px;
+            /* border-radius: 50%; */
+            background-color: yellow;
+        }
+
+        .grey-box {
+            position: absolute;
+            right: 5%;
+            top: 10%;
+            width: 150px;
+            height: 150px;
+            /* border-radius: 50%; */
+            background-color: grey;
+        }
+
+        .box_circle {
+            display: flex;
+            position: absolute;
+            left: 0%;
+            bottom: 0%;
+            top: 0%;
+            right: 0%;
+            border-radius: 50%;
+            font-weight: bold;
+            background-color: green;
+            justify-content: center;
+            /* 水平居中 */
+            align-items: center;
+            /* 垂直居中 */
+        }
+
+        .box_ret {
+            border-radius: 5%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fixed-box">
+        <div class="green-box">
+            <div class="pink-box box_ret">
+                <div class="pink-box box_circle">(￣▽￣)/</div>
+            </div>
+
+            <div class="blue-box box_ret">
+                <div class="blue-box box_circle">(っ●ω●)っ</div>
+            </div>
+            <div class="yellow-box box_ret">
+                <div class="yellow-box box_circle">ヾ (o ° ω ° O ) ノ゙</div>
+            </div>
+            <div class="grey-box box_ret">
+                <div class="grey-box box_circle">(▰˘◡˘▰)</div>
+            </div>
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>

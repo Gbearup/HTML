@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thank you</title>
+    <a href="./song.html">回首頁</a>
+    <style>
+        .highlight-name {
+            color: blue;
+            /* 設定 name 的顏色 */
+            font-weight: bold;
+            /* 可選：加粗字體 */
+        }
+
+        .highlight-donate {
+            color: green;
+            /* 設定 donate 的顏色 */
+            font-weight: bold;
+            /* 可選：加粗字體 */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>感謝您的捐款！</h1>
+    <p id="thank-you-message"></p>
+
+    <script>
+        // 獲取 URL 的查詢參數
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        const donate = urlParams.get('donate');
+
+        // 顯示感謝信息，添加樣式
+        const message = `親愛的 <span class="highlight-name">${name}</span>，感謝您捐款 <span class="highlight-donate">${donate}</span> <br>非常感謝您對我們的支持！<br>您的捐款將幫助我們繼續推動創作音樂。
+        <br>感謝您與我們一同努力，使這個世界變得更美好。！`;
+        document.getElementById('thank-you-message').innerHTML = message;
+    </script>
+    <!-- 親愛的 ，
+
+    非常感謝您對我們的支持！您的捐款將幫助我們繼續推動 [簡要說明項目或目標]。感謝您與我們一同努力，使這個世界變得更美好。
+
+    祝好，
+    [你的名字]
+    [你的機構] -->
+</body>
+
+</html>
