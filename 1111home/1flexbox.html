@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    *{box-sizing: border-box;
+    }
+.container{
+    width: 80%;
+    height: 1000px;
+    background-color: lightblue;
+
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    flex-wrap: wrap;
+
+}
+
+.item{
+    width: 30%;
+    height: 300px;
+    background-color: gray;
+    margin: 10px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+
+}
+
+.item:hover{
+background-color: plum;
+}
+
+a{
+    font-size: 50px;
+    text-decoration: none;
+}
+a:hover{
+    background-color: lightseagreen;
+}
+
+
+.item1{
+    width: 30%;
+    height: 200px;
+    background-color: lightblue;
+    margin: 10px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+
+}
+
+.box1{
+    width: 60px;
+    height:60px;
+    background-image:url(./2.jpg);
+    background-position: left top;
+    
+}
+
+
+</style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">
+           <img src="./1.jpg" alt="">
+        </div>   
+        <div class="item box1">2</div>
+        <div class="item">
+            <img src="./2.jpg" alt="">
+        </div>
+        <div class="item ">
+            <a href="">點我點我</a>
+        </div>   
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>   
+        <div class="item1"></div>
+        <div class="item1"></div>
+    </div>
+</body>
+</html>

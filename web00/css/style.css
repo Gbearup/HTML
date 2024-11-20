@@ -46,7 +46,13 @@ aside {
     flex-basis: calc(100% - 25px);
     background-color: lightpink;
 }
-
+.intro p {
+    font-size: 24px;
+    font-weight: 500;
+    color: #FF00FF;
+    text-decoration: underline;
+    text-align: center;
+}
 .menu {
     /* list-style-type: none; */
     /* 去掉列表項目的標記 */
