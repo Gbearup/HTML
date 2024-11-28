@@ -165,4 +165,9 @@ footer {
     border-top: 0;
     /* text-align: center; */
 
+    font-family: '標楷體';
+    color: #000000;
+    text-align: center;
+    font-size: 16px;
+
 }
