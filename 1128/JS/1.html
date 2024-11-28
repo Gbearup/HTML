@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 <style>
+    body{
+        background-color: green;
+    }
+    
 .container{
     width: 90%;
     height: 90vh;
@@ -15,6 +19,9 @@
     margin: auto;
     align-items: center;
     justify-content: space-around;
+    border-radius: 10px;
+    position: relative; /* 確保雪花在背景上方 */
+    overflow: hidden; /* 確保雪花不會溢出容器 */
 
 }
 
@@ -35,23 +42,63 @@ img{
     width: 250px;
     height: 250px;
     border-radius: 5px;
+    transition: border 0.3s ease;
     }
 
 button{
     margin-top: 10px;
     border-radius: 5px;
-    padding: 5px;
+    padding: 10px;
 }
 
-.bg-pink{
-    background-color: pink;
+.bg-red{
+    background-color: red;
+}
+
+.img-border-green {
+    border: 10px solid green; /* 綠色邊框 */
+    box-shadow: 0px 4px 20px rgba(16, 64, 16, 0.7);
+}
+
+/* 雪花的基本樣式 */
+.snowflake {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: white;
+    pointer-events: none; /* 確保不影響其他元素的互動 */
+    z-index: 10;
+    opacity: 0; /* 初始時不顯示 */
+    animation: fall 5s infinite linear; /* 雪花飄落的動畫 */
+}
+
+/* 雪花動畫 */
+@keyframes fall {
+    0% {
+        top: -30px;
+        opacity: 1;
+    }
+    100% {
+        top: 100%; /* 滑過過程中，讓雪花飄到底部 */
+        opacity: 0;
+    }
+}
+p{
+    font-size: 50px;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+    color: red;
+    font-stretch: expanded;
 }
 </style>
 
 </head>
 <body>
+    <p>Merry X'mas</p>  
     <div class="container">
-        
 <div class="item">
 <img src="./hosein-fayton-LcXLRFzgKHE-unsplash.jpg" alt="">
 <button id="btn1">NT$300元</button>
@@ -68,46 +115,89 @@ button{
 </div>
     </div>
 
+   
+    
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" 
 integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" 
-crossorigin="anonymous" referrerpolicy="no-referrer"></script>>   
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>   
 
 
 <script>
-$(document).ready(function() {
-
+    
+    // 函數生成雪花
+    function generateSnowflake() {
+        var snowflake = $('<div class="snowflake">❄</div>');  // 雪花字符
+        var leftPosition = Math.random() * 100;  // 隨機左側位置
+        var size = Math.random() * (30 - 10) + 10;  // 隨機大小
+        snowflake.css({
+            'left': leftPosition + '%',
+            'font-size': size + 'px'
+        });
+        
+        // 添加雪花到背景中
+        $('.container').append(snowflake);
+        
+        // 雪花會隨著動畫移動，動畫結束後刪除雪花
+        snowflake.on('animationend', function() {
+            snowflake.remove();
+        });
+    }
+    
+    
+    $(document).ready(function() {
     $('#btn1').hover(
         function() {
-        $(this).text('限時優惠價 NT$250元');
-        $(this).addClass('bg-pink');
+        $(this).text('聖誕優惠價 NT$250元');
+        $(this).addClass('bg-red');
+        $(this).closest('.item').find('img').addClass('img-border-green');
+
+        // 滑鼠移動到價格時生成雪花
+             for (var i = 0; i < 10; i++) {
+                generateSnowflake();
+            }
     },
-    function() {
+        function() {
             $(this).text('NT$300元');
-            $(this).removeClass('bg-pink'); 
+            $(this).removeClass('bg-red'); 
+            $(this).closest('.item').find('img').removeClass('img-border-green');
         }
     );
 
     $('#btn2').hover(
         function() {
-        $(this).text('限時優惠價 NT$350元');
-        $(this).addClass('bg-pink');
+        $(this).text('聖誕優惠價 NT$350元');
+        $(this).addClass('bg-red');
+        $(this).closest('.item').find('img').addClass('img-border-green');
+        
+        // 滑鼠移動到價格時生成雪花
+        for (var i = 0; i < 10; i++) {
+                generateSnowflake();
+            }
         }, 
         function() {
-            $(this).text('NT$300元');
-            $(this).removeClass('bg-pink'); 
+            $(this).text('NT$400元');
+            $(this).removeClass('bg-red'); 
+            $(this).closest('.item').find('img').removeClass('img-border-green');
         }
     );
 
     $('#btn3').hover(
         function() {
             // 鼠标进入时执行
-            $(this).text('限時優惠價 NT$250元');
-            $(this).addClass('bg-pink');
+            $(this).text('聖誕優惠價 NT$250元');
+            $(this).addClass('bg-red');
+            $(this).closest('.item').find('img').addClass('img-border-green');
+            
+        // 滑鼠移動到價格時生成雪花
+        for (var i = 0; i < 10; i++) {
+                generateSnowflake();
+            }
         }, 
         function() {
             // 鼠标离开时执行
             $(this).text('NT$300元');
-            $(this).removeClass('bg-pink');  // 删除 bg-pink 类，恢复原背景
+            $(this).removeClass('bg-red');  // 删除 bg-pink 类，恢复原背景
+            $(this).closest('.item').find('img').removeClass('img-border-green');
         }
     );
 });
