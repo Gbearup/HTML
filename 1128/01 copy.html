@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品展示</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        .box-container {
+            width: 90%;
+            height: 900px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(./4.jpg);
+            background-size: 80%;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .box {
+            width: 300px;
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            margin-top: 60px;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .btn {
+            margin-top: 10px;
+            padding: 20px;
+            background-color: lightblue;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: deepskyblue;
+        }
+
+        .bg-pink {
+            background-color: lightpink;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box-container">
+        <div class="box" id="box1">
+            <img src="./01.html/cake1.jpg" class="product-image" alt="商品圖片">
+            <button class="btn" id="btn1" data-original-price="100" data-discounted-price="70">原價 $100元</button>
+        </div>
+
+        <div class="box" id="box2">
+            <img src="./01.html/cake2.jpg" class="product-image" alt="商品圖片">
+            <button class="btn" id="btn2" data-original-price="200" data-discounted-price="150">原價 $200元</button>
+        </div>
+
+        <div class="box" id="box3">
+            <img src="./01.html/cake3.jpg" class="product-image" alt="商品圖片">
+            <button class="btn" id="btn3" data-original-price="150" data-discounted-price="100">原價 $150元</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $(document).ready(function () {
+            // 1. 为所有按钮绑定事件
+            $('.btn').each(function () {
+                var $button = $(this);
+                var originalPrice = $button.data('original-price');
+                var discountedPrice = $button.data('discounted-price');
+
+                // 2. 点击按钮时，显示特价并禁用按钮
+                $button.on('click', function () {
+                    $button.text(`特價 $${discountedPrice} 元`)
+                        .css('background-color', 'lightcoral')
+                        .prop('disabled', true);
+                    console.log(`原價：$${originalPrice}，特價：$${discountedPrice}`);
+                });
+
+                // 3. 使用 hover() 同时处理 mouseenter 和 mouseleave
+                $button.hover(
+                    function () { // mouseenter
+                        $button.text(`特價 $${discountedPrice} 元`)
+                            .css('background-color', 'lightcoral');
+                        console.log(`顯示特價：$${discountedPrice}`);
+                    },
+                    function () { // mouseleave
+                        $button.text(`特價 $${discountedPrice} 元`)
+                            .css('background-color', 'lightpink');
+                        console.log(`顯示特價：$${discountedPrice}`);
+                    }
+                );
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 300px;
+            height: 300px;
+            /* background-color: lightblue; */
+        }
+
+        .bg-blue {
+            background-color: lightblue;
+        }
+
+        .bg-pink {
+            background-color: lightpink;
+        }
+
+        .bg-green {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="box" class="bg-blue" onclick="boxfun()">
+
+    </div>
+
+    <script>
+
+        //1. div onclick => js function  在div加上onclick連接到函式
+        function boxfun() {
+            console.log('hello box');
+            box.setAttribute('class', 'bg-pink');
+
+        }
+
+        
+
+        let box = document.getElementById('box');
+
+
+
+        // change css
+        // box.style.backgroundColor = "lightpink";
+
+        // class
+        // box.classList.remove("bg-blus");
+        // box.classList.add("bg-pink");
+
+        // attr  <---懶人包，好用
+        // box.setAttribute("class", "bg-pink");
+        // box.setAttribute("class", "bg-green");
+
+        // console.log('box' , box);
+
+        // event事件
+
+
+
+    </script>
+
+
+</body>
+
+</html>

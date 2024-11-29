@@ -124,8 +124,10 @@ main {
     width: calc(1024px - 215px);
     height: 29px;
     /* background-color: red; */
+    /* 畫邊框用 */
     border: 1px solid black;
     border-bottom: 0;
+    /* 規定的字體 */
     font-size: 24px;
     font-family: '標楷體';
     color: #0000FF;
