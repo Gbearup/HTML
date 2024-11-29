@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 設定整體字型為標楷體 */
+body {
+    font-family: "DFKai-SB", "標楷體", sans-serif;
+}
+
+/* 選單區設定 */
+.menu {
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+/* 設定「社團介紹」的樣式 */
+.intro p {
+    font-size: 24px; /* 字型大小 24px */
+    font-weight: 500; /* 粗體 500 */
+    color: #FF00FF; /* 文字顏色為 #FF00FF */
+    text-decoration: underline; /* 底線 */
+    margin: 0;
+}
+
+/* 設定選單項目基本樣式 */
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 設定選單項目的連結樣式 */
+.menu-item {
+    display: block;
+    font-size: 16px; /* 字型大小 16px */
+    color: #000000; /* 預設文字顏色為 #000000 */
+    font-weight: 500; /* 粗體 500 */
+    text-decoration: none;
+    padding: 10px;
+    background-image: url('menu1.png'); /* 預設背景圖片 */
+    background-size: cover;
+    margin: 5px 0;
+}
+
+/* 當滑鼠移到選單項目時 */
+.menu-item:hover {
+    background-image: url('menu2.png'); /* 滑鼠移到時更換背景圖片 */
+}
+
+/* 調整選單項目的顯示效果 */
+.menu-item:hover {
+    background-image: url('menu2.png');
+}
+
+/* 設定連結的樣式 */
+.menu-item:visited {
+    color: #000000;
+}
+
+/* 設定「社團介紹」文字區塊樣式 */
+.intro p {
+    font-size: 24px;
+    font-weight: 500;
+    color: #FF00FF;
+    text-decoration: underline;
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="guitar_history.html" class="menu-item">吉他社</a></li>
+            <li><a href="#" class="menu-item">熱舞社</a></li>
+            <li><a href="#" class="menu-item">棒球社</a></li>
+            <li><a href="#" class="menu-item">羽球社</a></li>
+            <li><a href="#" class="menu-item">足球社</a></li>
+            <li><a href="#" class="menu-item">童軍社</a></li>
+        </ul>
+        <div class="intro">
+            <p>社團介紹</p>
+        </div>
+    </div>
+</body>
+</html>
