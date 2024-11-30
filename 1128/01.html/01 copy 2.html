@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品展示</title>
+    <style>
+        
+        .box-container {
+            width: 90%;
+            height: 100vh; 
+            
+            background-image: url(./9eb273ee54583750a57a9ef101be5abf.jpg);
+            background-position: top center;
+            background-repeat: no-repeat; /* 避免圖片重複 */
+            background-size: contain; /* 確保圖片完整顯示在容器內 */
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .box {
+            width: 300px;
+            height: 350px;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            margin-top: 60px;
+            /* border: 2px solid crimson; */
+            background: rgba(255, 255, 255, 0.5); /* 半透明背景 */
+        }
+
+        .product-image {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 1px solid #ccc;
+            border-radius: 10%;
+            margin-top: 10px;
+            
+        }
+
+
+        .bg-pink {
+            background-color: lightpink;
+        }
+
+        .text-red{
+            color:red;
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="box-container">
+        <div class="box">
+            <img src="./cake1.jpg" class="product-image">
+            <button type="btn" id="btn1">
+                <p id="price1">
+                    原價 $100元
+                </p></button>
+        </div>
+
+        <div class="box">
+            <img src="./cake2.jpg" class="product-image">
+            <button type="btn" id="btn2">
+                <p id="price2">
+                    原價 $150元
+                </p></button>
+        </div>
+
+        <div class="box">
+            <img src="./cake3.jpg" class="product-image">
+            <button type="btn" id="btn3">
+                <p id="price3">
+                    原價 $150元
+                </p></button>
+        </div>
+    </div>
+
+    <!-- jquery include  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $(document).ready(function () {
+
+        let btn1 = $('#btn1');
+        let btn2 = $('#btn2');
+        let btn3 = $('#btn3');
+        let price1 = $('#price1');
+        let price2 = $('#price2');
+        let price3 = $('#price3');
+
+        console.log('btn1', btn1);
+        console.log('btn2', btn2);
+        console.log('btn3', btn3);
+
+
+        // btn1.click(function (e) {
+        //     price1.text('聖誕優惠價 NT$80元') ;
+        //     price1.attr('class', 'text-red');
+        //     btn1.attr('class', 'bg-pink');
+                      
+        // });
+
+        // btn2.click(function (e) {
+        //     price2.text('聖誕優惠價 NT$120元') ;
+        //     price2.attr('class', 'text-red');
+        //     btn2.attr('class', 'bg-pink');
+          
+        // });
+
+        // btn3.click(function (e) {
+        //     price3.text('聖誕優惠價 NT$120元') ;
+        //     price3.attr('class', 'text-red');
+        //     btn3.attr('class', 'bg-pink');
+        // });
+
+
+
+
+        btn1.click(function (e) {
+            // 顯示原價並加上刪除線
+            price1.html('原價 <span style="text-decoration: line-through;">NT$100元</span>');
+            // 顯示聖誕優惠價，並套用紅色字型
+            price1.append('<div class="text-red">聖誕優惠價 NT$80元</div>');
+            // 更改按鈕顏色
+            btn1.attr('class', 'bg-pink');
+        });
+
+        btn2.click(function (e) {
+            // 顯示原價並加上刪除線
+            price2.html('原價 <span style="text-decoration: line-through;">NT$150元</span>');
+            // 顯示聖誕優惠價，並套用紅色字型
+            price2.append('<div class="text-red">聖誕優惠價 NT$120元</div>');
+            // 更改按鈕顏色
+            btn2.attr('class', 'bg-pink');
+        });
+
+        btn3.click(function (e) {
+            // 顯示原價並加上刪除線
+            price3.html('原價 <span style="text-decoration: line-through;">NT$150元</span>');
+            // 顯示聖誕優惠價，並套用紅色字型
+            price3.append('<div class="text-red">聖誕優惠價 NT$120元</div>');
+            // 更改按鈕顏色
+            btn3.attr('class', 'bg-pink');
+        });
+
+
+
+    });
+    </script>
+
+</body>
+
+</html>

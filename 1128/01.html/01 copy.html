@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品展示</title>
+    <style>
+        
+        .box-container {
+            width: 90%;
+            height: 100vh; 
+            
+            background-image: url(./9eb273ee54583750a57a9ef101be5abf.jpg);
+            background-position: top center;
+            background-repeat: no-repeat; /* 避免圖片重複 */
+            background-size: contain; /* 確保圖片完整顯示在容器內 */
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .box {
+            width: 300px;
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            margin-top: 60px;
+            /* border: 2px solid crimson; */
+            background: rgba(255, 255, 255, 0.5); /* 半透明背景 */
+        }
+
+        .product-image {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 1px solid #ccc;
+            border-radius: 10%;
+            
+        }
+
+
+        .bg-pink {
+            background-color: lightpink;
+        }
+
+        .text-red{
+            color:red;
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="box-container">
+        <div class="box">
+            <img src="./cake1.jpg" class="product-image">
+            <button type="btn" id="btn1">
+                <p id="price1">
+                    原價 $100元
+                </p></button>
+        </div>
+
+        <div class="box">
+            <img src="./cake2.jpg" class="product-image">
+            <button type="btn" id="btn2">
+                <p id="price2">
+                    原價 $150元
+                </p></button>
+        </div>
+
+        <div class="box">
+            <img src="./cake3.jpg" class="product-image">
+            <button type="btn" id="btn3">
+                <p id="price3">
+                    原價 $150元
+                </p></button>
+        </div>
+    </div>
+
+    <script>
+        let btn1 = document.getElementById('btn1');
+        let btn2 = document.getElementById('btn2');
+        let btn3 = document.getElementById('btn3');
+        let price1 = document.getElementById('price1');
+        let price2 = document.getElementById('price2');
+        let price3 = document.getElementById('price3');
+
+
+
+
+        
+
+        btn1.addEventListener('mouseenter', function () {
+            console.log('btn1 mouseenter ok');
+            price1.innerText = '聖誕優惠價 NT$80元';
+            price1.setAttribute('class', 'text-red');
+            btn1.setAttribute('class', 'bg-pink');
+           
+            
+        });
+
+        btn2.addEventListener('mouseenter', function () {
+            console.log('btn2 mouseenter ok');
+            price2.innerText = '聖誕優惠價 NT$120元';
+            price2.setAttribute('class', 'text-red');
+            btn2.setAttribute('class', 'bg-pink');
+           
+
+        });
+
+        btn3.addEventListener('mouseenter', function () {
+            console.log('btn3 mouseenter ok');
+            price3.innerText = '聖誕優惠價 NT$120元';
+            price3.setAttribute('class', 'text-red');
+            btn3.setAttribute('class', 'bg-pink');
+        });
+    </script>
+
+</body>
+
+</html>

@@ -23,22 +23,25 @@ img{
     background-color: aqua;
     margin: auto;
     border: 1px solid black;
-     display: flex;
+    display: flex;
 }
 aside{
     width: 215px;
     height:calc(768px - 65px - 20px);
     background-color:red;
 
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
 }
 
 .aside-header{
     width: 215px;
     height:calc(768px - 65px - 20px - 25px);
     background-color: pink ;
-    border: 1px solid black
+    border: 1px solid black;
+    text-align:center;
+    margin: 0 auto;
+    padding: 5px;
 }
 
 .aside-title{
@@ -46,28 +49,31 @@ aside{
     font-size:24px ;
     font-family: '標楷體';
     font-weight: 500;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     text-align: center;
     margin-top: 10px;
+    border-bottom: 2px solid #FF00FF;
 }
 
-menu{
+/* menu{
     display: flex;
     flex-direction: column;
     justify-content:center;
     align-items: center;
-}
+    justify-content: flex-start;
+    width: 100%;
+} */
 
 .menu-item{
     width: 200px;
-    height: 30px;
+    height: 35px;
     background-image: url(../img/menu1.png);
     font-size:16px ;
     font-family: '標楷體';
     color: #000000;
     text-align: center;
     margin-top: 10px;
-    padding: 5px;
+    padding: 8px;
     border-radius: 5px;
 }
 
