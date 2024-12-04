@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倒數計時</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 80%;
+            margin: auto;
+        }
+
+        .box {
+            border: 2px;
+            width: 300px;
+            height: 300px;
+            background-color: lightblue;
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <p>
+                <input type="text" name="" id="text">
+            </p>
+
+            <p>
+                <input type="number" name="" id="sec">
+            </p>
+
+            <p>
+                <button type="button" id="myBtn">倒數計時</button>
+            </p>
+
+            <p>
+                <span id="box1Span"></span>
+            </p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+
+            // 顯示倒數計時結果的函數
+            function showResult(textValue, countdown) {
+                box1Span.text(`${textValue} 還剩下 ${countdown} seconds.`);
+            }
+
+            // 綁定元素
+            const text = $('#text');
+            const sec = $('#sec');
+            const myBtn = $('#myBtn');
+            const box1Span = $('#box1Span');
+
+
+            // 點擊按鈕觸發的事件
+            myBtn.click(function () {
+                console.log('myBtn clicked');
+
+                // 1. 獲取輸入框的文本
+                let textValue = text.val();
+                console.log('textValue', textValue);
+
+                // 2. 獲取時間（秒）
+                let secValue = Number(sec.val());
+                console.log('secValue', secValue);
+
+                // 驗證輸入
+                if (isNaN(secValue) || secValue <= 0) {
+                    alert('請輸入有效的秒數！');
+                    return;
+                }
+
+                // 顯示倒數計時
+                let countdown = secValue;
+                const intervalId = setInterval(function () {
+                    showResult(textValue, countdown);  // 顯示倒數計時
+                    countdown--; // 每次減少 1 秒
+
+                    // 如果倒數結束，清除定時器並顯示結束訊息
+                    if (countdown < 0) {
+                        clearInterval(intervalId);  // 停止定時器
+                        $('#box1Span').text(`${textValue} | Time's up!`); // 顯示時間結束訊息
+                    }
+                }, 1000); // 每 1 秒執行一次
+            });
+
+        });
+    </script>
+</body>
+
+</html>
