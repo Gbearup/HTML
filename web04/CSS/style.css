@@ -6,7 +6,7 @@
 header{
     width: 1024px;
     height: 65px;
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
     margin: auto;
     border: 1px solid black;
     text-align: center;
@@ -20,15 +20,16 @@ img{
 .container{
     width: 1024px;
     height: calc(768px - 65px - 20px);
-    background-color: aqua;
+    /* background-color: aqua; */
     margin: auto;
     border: 1px solid black;
+    border-top:none;
     display: flex;
 }
 aside{
     width: 215px;
     height:calc(768px - 65px - 20px);
-    background-color:red;
+    /* background-color:red; */
 
     /* display: flex;
     flex-direction: column; */
@@ -37,8 +38,10 @@ aside{
 .aside-header{
     width: 215px;
     height:calc(768px - 65px - 20px - 25px);
-    background-color: pink ;
-    border: 1px solid black;
+    /* background-color: pink ; */
+    border-right: 1px solid black; 
+    border-bottom: 1px solid black;
+    
     text-align:center;
     margin: 0 auto;
     padding: 5px;
@@ -83,8 +86,8 @@ background-image: url(../img/menu2.png);
 .aside-footer{
     width: 215px;
     height:25px;
-    background-color: lightblue ;
-    border: 1px solid black
+    /* background-color: lightblue ; */
+    border-right: 1px solid black;
 
     font-size:16px ;
     font-family: '標楷體';
@@ -96,13 +99,13 @@ background-image: url(../img/menu2.png);
 main{
     width:calc(1024px - 215px);
     height:calc(768px - 65px - 20px);
-    background-color: burlywood;
+    /* background-color: burlywood; */
 }
 
 .main-header{
     width:calc(1024px - 215px);
     height:calc(29px);
-    background-color: yellow;
+    /* background-color: yellow; */
 
     color: #0000FF;
     font-size: 24px;
@@ -113,7 +116,7 @@ main{
 .main-footer{
     width:calc(1024px - 215px);
     height:calc(768px - 65px - 20px - 29px);
-    background-color: yellowgreen;
+    /* background-color: yellowgreen; */
 }
 
 iframe{
@@ -126,7 +129,7 @@ iframe{
 footer{
     width: 1024px;
     height: 20px;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     margin: auto;
     border: 1px solid black;
 
@@ -134,4 +137,5 @@ footer{
     font-family: '標楷體';
     color: #000000;
     text-align: center;
+    border-top:none;
 }
