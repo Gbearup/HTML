@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate</title>
+</head>
+
+<body>
+    <form action="./4-getSum.php" method="get" id="myForm">
+        <p>
+            <input type="number" name="num1" id="num1">
+        </p>
+
+        <p>
+            <input type="number" name="num2" id="num2">
+        </p>
+
+        <p>
+            <input type="text" name="opt" id="opt">
+        </p>
+
+        <p>
+            <input type="submit" value="submit">
+        </p>
+
+        <p id="p1"> </p>
+
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+
+            // 1.bind
+            const myForm = $('#myForm');
+            const tmp = $('#tmp');
+            const p1 = $('#p1');
+            const opt = $('#opt');
+
+            // 2.action
+            myForm.submit(function (e) {
+
+                e.preventDefault();
+
+                let data = myForm.serializeArray();
+
+
+                $.ajax({
+                    type: "GET",
+                    url: "./5-getResult.php",
+                    data: data,
+                    dataType: "json",
+                    success: function (res) {
+                        console.log('res', res);
+                        p1.text('Result =' + res.result);
+
+                    }
+                });
+
+
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

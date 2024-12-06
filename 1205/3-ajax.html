@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Hello html -->
+    <!-- <h1 id="myH1">This is NO.1</h1> -->
+    <!-- <a href="./3-getData.php"></a> -->
+
+    <button type="button" id="myBtn">我的價值觀</button>
+
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p0"></p>
+
+    <!-- ajax ? -->
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $(document).ready(function () {
+            // 1.bind
+            // const myH1 = $('#myH1');
+            const myBtn = $('#myBtn');
+
+            const p0 = $('#p0');
+            const p1 = $('#p1');
+            const p2 = $('#p2');
+
+
+            // 2.action
+            myBtn.click(function (e) {
+                // ajax
+                $.ajax({
+                    type: "get",
+                    url: "./3-getData.php",
+                    // data: "data",
+                    dataType: "json",
+                    success: function (response) {
+                        console.log('response', response);
+                        console.log('response typeof', typeof (response));
+
+                        // console.log('response.word', response.word);
+                        // myH1.text(response.word);
+                        
+                        p1.text(response.name);
+                        p2.text(response.mobile);
+                        p0.text(response.word);
+
+                    }
+                });
+
+            });
+
+
+
+
+
+        });
+    </script>
+
+</body>
+
+</html>

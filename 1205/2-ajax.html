@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX 範例</title>
+</head>
+
+<body>
+
+    <h2>使用 AJAX 顯示資料</h2>
+    <button id="myBtn">myBtn</button> <!-- 按鈕 -->
+
+    <div id="result"></div> <!-- 顯示資料的區域 -->
+
+    <!-- 引入 jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+
+    <script>
+        $(document).ready(function () {
+            // 當按鈕被點擊時，發送 AJAX 請求
+            $("#myBtn").click(function () {
+                $.ajax({
+                    type: "GET",       // 使用 GET 方法來請求資料
+                    url: "2-data.php",  // 這是伺服器的檔案，會回傳資料
+                    dataType: "json",  // 設定返回的資料格式是 JSON
+
+
+                    success: function (response) {
+                        // 如果請求成功，將回傳的資料顯示在頁面上
+                        // $("#result").html(response);
+
+                        console.log('response', response);
+                        console.log('response typeof', typeof (response));
+
+                        // 如果請求成功，遍歷陣列並顯示每一個項目
+                        var html = "<ul>";
+                        for (var key in response) {
+                            if (response.hasOwnProperty(key)) {
+                                html += "<li>" + response[key] + "</li>";
+                            }
+                        }
+                        html += "</ul>";
+                        // 把結果顯示在頁面上的 #result 區域
+                        $("#result").html(html);
+
+
+
+                    }
+                });
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
