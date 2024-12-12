@@ -7,12 +7,18 @@
     <title>吃吃看</title>
     <style>
         .container {
-            width: 100%;
+            width: 90%;
             height: 400px;
             background-image: url(./4.jpg);
-            opacity: 0.5;
+            /* opacity: 0.5; */
+            margin: auto;
 
 
+        }
+
+        .container1 {
+            width: 90%;
+            margin: auto;
         }
 
         table {
@@ -23,15 +29,16 @@
             text-align: center;
         }
 
+        th {
+            background-color: #6f4f47;
+            color: #F5F5DC;
+        }
+
         td,
         th {
             border: 1px solid lightgrey;
             padding: 8px;
             text-align: center;
-            color: rgb(228, 206, 15);
-            font-size: 20px;
-            font-weight: bold;
-
         }
 
         .text-red {
@@ -39,20 +46,10 @@
             font-size: 25px;
         }
 
-        p {
-            color: rgb(228, 206, 15);
-        }
-
-
-
         /* 
         h2 {
             text-align: center;
         } */
-
-        .text-black {
-            color: #CC5500;
-        }
     </style>
 
 
@@ -60,115 +57,115 @@
 
 <body>
     <!-- <h2>Taster</h2> -->
-
-
     <div class="container">
-
     </div>
-    <table>
-        <tr>
-            <th width="15%">品項</th>
-            <th width="20%">產品描述</th>
-            <th width="10%">數量</th>
-            <th>小計</th>
 
-        </tr>
+    <div class="container1">
+        <table>
+            <tr>
+                <th width="15%">品項</th>
+                <th width="20%">產品描述</th>
+                <th width="10%">數量</th>
+                <th>小計</th>
 
-        <tr>
-            <td>
-                <img src="./1.jpg" width="180px" height="160px">
-            </td>
-            <td>
-                <p>巧克力泡芙</p>
-                <p class="priceClass" id="price1" data-price="50">
-                    50元
-                </p>
-                <p>
-                    內容物:巧克力鮮奶油、植物奶油、雞蛋、麵粉、巧克力醬
+            </tr>
 
-                </p>
-            </td>
+            <tr>
+                <td>
+                    <img src="./1.jpg" width="180px" height="160px">
+                </td>
+                <td>
+                    <p>巧克力泡芙</p>
+                    <p class="priceClass" id="price1" data-price="50">
+                        50元
+                    </p>
+                    <p>
+                        內容物:巧克力鮮奶油、植物奶油、雞蛋、麵粉、巧克力醬
 
-            <td>
-                <input class="inputClass" type="number" name="" id="input1" max="10" min="0">
-            </td>
+                    </p>
+                </td>
 
-            <td>
-                <p class="totalClass text-black" id="total1">
-                    0
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <img src="./3.jpg" width="180px" height="160px">
-            </td>
-            <td>
-                <p>牛肉咖哩餃</p>
-                <p class="priceClass" id="price2" data-price="75">
-                    75元
-                </p>
-                <p>
-                    成份: 咖哩粉、澳洲牛肉、洋蔥、植物奶油、麵粉
+                <td>
+                    <input class="inputClass" type="number" name="" id="input1" max="10" min="0">
+                </td>
 
-                </p>
-            </td>
+                <td>
+                    <p class="totalClass" id="total1">
+                        0
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="./3.jpg" width="180px" height="160px">
+                </td>
+                <td>
+                    <p>牛肉咖哩餃</p>
+                    <p class="priceClass" id="price2" data-price="75">
+                        75元
+                    </p>
+                    <p>
+                        成份: 咖哩粉、澳洲牛肉、洋蔥、植物奶油、麵粉
 
-            <td>
-                <input class="inputClass" type="number" name="" id="input2" max="10" min="0">
-            </td>
+                    </p>
+                </td>
 
-            <td>
-                <p class="totalClass  text-black" id="total2">
-                    0
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <img src="./2.jpg" width="180px" height="160px">
-            </td>
-            <td>
-                <p>巧克力布朗尼</p>
-                <p class="priceClass" id="price3" data-price="55">
-                    55元
-                </p>
-                <p>
-                    內容物:巧克力蛋糕體加入杏仁核桃
-                </p>
-            </td>
+                <td>
+                    <input class="inputClass" type="number" name="" id="input2" max="10" min="0">
+                </td>
 
-            <td>
-                <input class="inputClass" type="number" name="" id="input3" max="10" min="0">
-            </td>
+                <td>
+                    <p class="totalClass" id="total2">
+                        0
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="./2.jpg" width="180px" height="160px">
+                </td>
+                <td>
+                    <p>巧克力布朗尼</p>
+                    <p class="priceClass" id="price3" data-price="55">
+                        55元
+                    </p>
+                    <p>
+                        內容物:巧克力蛋糕體加入杏仁核桃
+                    </p>
+                </td>
 
-            <td>
-                <p class="totalClass  text-black" id="total3">
-                    0
-                </p>
-            </td>
-        </tr>
+                <td>
+                    <input class="inputClass" type="number" name="" id="input3" max="10" min="0">
+                </td>
 
-        <tr>
-            <td colspan="3">
-                總共金額為
-            </td>
-            <!-- <td>
+                <td>
+                    <p class="totalClass" id="total3">
+                        0
+                    </p>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="3">
+                    總金額
+                </td>
+                <!-- <td>
             </td>
             <td>
             </td> -->
-            <td>
-                <p id="sumResult">
-                    0 元
-                </p>
+                <td>
+                    <p id="sumResult">
+                        0 元
+                    </p>
 
-            </td>
-        </tr>
+                </td>
+            </tr>
 
 
-    </table>
+        </table>
+    </div>
 
-    <hr>
+    <!-- <hr> -->
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
