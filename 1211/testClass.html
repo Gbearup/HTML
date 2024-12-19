@@ -60,7 +60,7 @@
             </td>
 
             <td>
-                <p id="total1">
+                <p class="totalClass" id="total1">
                     0
                 </p>
             </td>
@@ -138,10 +138,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
     <script>
         $(document).ready(function () {
 
             function getSum() {
+
                 let sum = 0;
                 totalClass.each(function (index, element) {
                     console.log('index', index);
@@ -150,17 +153,14 @@
 
                     let getTotalValue = Number($(this).text());
                     sum = sum + getTotalValue;
+                });
 
-                })
-
-
-
-                //重構
                 if (sum >= 200) {
                     sum = sum * 0.8;
                     sumResult.attr('class', 'text-red');
                 } else {
                     sumResult.attr('class', '');
+
                 }
 
                 let resultString = `${sum}元`;
@@ -168,56 +168,42 @@
 
             }
 
+
             //1.bind
-
-            const price1 = $('#price1');
-            const input1 = $('#input1');
-            const total1 = $('#total1');
-
             const priceClass = $('.priceClass');
             const inputClass = $('.inputClass');
             const totalClass = $('.totalClass');
-
-            console.log('priceClass', priceClass);
-            console.log('inputClass', inputClass);
-            console.log('totalClass', totalClass);
 
             const sumResult = $('#sumResult');
             let sum = 0;
 
             //2.action
-            $.each(inputClass, function (indexInArray, valueofElement) {
+            $.each(inputClass, function (indexInArray, valueOfElement) {
                 $(this).change(function (e) {
-                    console.log('change ok');
-
-                    console.log('now $(this)', $(this));
-
+                    
                     myParent = $(this).parent().parent();
-                    console.log('myParent', myParent);
-
                     myPrice = myParent.find('.priceClass').attr('data-price');
-                    console.log('myPrice', myPrice);
-
                     myTotal = myParent.find('.totalClass');
-
-
 
                     let getPriceValue = Number(myPrice);
                     let getInputValue = Number($(this).val());
                     let result = getPriceValue * getInputValue;
-                    console.log(getPriceValue);
-                    console.log(getInputValue);
-                    console.log(result);
-
+             
                     myTotal.text(result);
+
                     getSum();
+
+
                 })
+
 
             })
 
 
 
-        });
+
+        })
+
 
     </script>
 
