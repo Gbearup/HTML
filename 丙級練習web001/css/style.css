@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    width: 1024px;
+    height: 65px;
+    /* background-color: aqua; */
+    margin: auto;
+    border: 1px solid black;
+    border-bottom: none;
+    text-align: center;
+}
+
+.container {
+    width: 1024px;
+    height: calc(1024px - 65px - 20px);
+    /* background-color: yellow; */
+    margin: auto;
+    display: flex;
+}
+
+aside {
+    width: 215px;
+    height: calc(1024px - 65px - 20px);
+    /* background-color: goldenrod; */
+    margin: auto;
+    font-family: "標楷體";
+    font-weight: 500;
+    font-size: 24px;
+    text-align: center;
+    color: #FF00FF;
+
+}
+
+.aside-header {
+    width: 215px;
+    height: calc(1024px - 65px - 20px - 25px);
+    /* background-color: red; */
+    margin: auto;
+    border: 1px solid black;
+    border-bottom: none;
+}
+
+.menu-item {
+    font-size: 16px;
+    text-align: center;
+    color: #000;
+    background-image: url(../img/menu1.png);
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.menu-item:hover {
+    background-image: url(../img/menu2.png);
+
+}
+
+.aside-footer {
+    width: 215px;
+    height: 25px;
+    /* background-color: rebeccapurple; */
+    margin: auto;
+    border: 1px solid black;
+    border-bottom: none;
+    font-family: "標楷體";
+
+    font-size: 16px;
+    text-align: center;
+    color: #000;
+
+}
+
+main {
+    width: calc(1024px - 215px);
+    height: calc(1024px - 65px - 20px);
+    /* background-color: lightcoral; */
+    margin: auto;
+}
+
+.main-header {
+    width: calc(1024px - 215px);
+    height: 29px;
+    /* background-color: lightblue; */
+    margin: auto;
+    border: 1px solid black;
+    border-bottom: none;
+    border-left: none;
+
+    font-family: "標楷體";
+    font-weight: 500;
+    font-size: 24px;
+    text-align: center;
+    color: #00F;
+
+}
+
+.main-footer {
+    width: calc(1024px - 215px);
+    height: calc(1024px - 65px - 20px - 29px);
+    /* background-color: lightgreen; */
+    margin: auto;
+    border: 1px solid black;
+    border-bottom: none;
+    border-left: none;
+
+    background-image: url(../img/0101.jpg);
+    text-align: center;
+
+
+}
+
+footer {
+    width: 1024px;
+    height: 20px;
+    /* background-color: green; */
+    margin: auto;
+    border: 1px solid black;
+    text-align: center;
+
+    font-family: "標楷體";
+
+    font-size: 16px;
+    text-align: center;
+    color: #000;
+
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
