@@ -41,8 +41,8 @@
                     <td>Amy</td>
                     <td>
 
-                        <button id="editID" data-id="1" type="button" class="btn btn-warning my-edit" data-bs-toggle="modal"
-                            data-bs-target="#myModal2">
+                        <button id="editID" data-id="1" type="button" class="btn btn-warning my-edit"
+                            data-bs-toggle="modal" data-bs-target="#myModal2">
                             edit
                         </button>
                         &nbsp;&nbsp;
@@ -141,8 +141,8 @@
                         <form action="/action_page.php">
                             <div class="mb-3 mt-3">
                                 <label for="name">Name:</label>
-                                <input type="name" class="form-name form-control" id="name" placeholder="Enter name" name="email"
-                                    value="Amy">
+                                <input type="name" class="form-name form-control" id="name" placeholder="Enter name"
+                                    name="email" value="Amy">
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
@@ -164,26 +164,27 @@
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-         $(document).ready(function () {          // 確保當 HTML 文檔完全加載並準備好時，會執行裡面的程式碼。這是 jQuery 中常用的做法，確保 DOM 元素已經可用，避免錯誤                 
+        $(document).ready(function () {          // 確保當 HTML 文檔完全加載並準備好時，會執行裡面的程式碼。這是 jQuery 中常用的做法，確保 DOM 元素已經可用，避免錯誤                 
             // 1.bind
             // const editID = $('#editID');
             const myEdit = $('.my-edit');          //表格的編輯按鈕上使用的類名
-            const myModal2 = $('#myModal2');
+            const myModal2 = $('#myModal2');       //這行代碼選中 id="myModal2" 的 HTML 元素（也就是模態框的容器），並將其儲存在變數 myModal2 中。myModal2 可能是你打算在編輯時彈出的模態框。
 
             // 2.action
-            myEdit.click(function (e) {
+            myEdit.click(function (e) {            //為 .my-edit 類的所有元素綁定了一個點擊事件。當這些元素（假設是編輯按鈕）被點擊時，裡面的代碼會被執行
                 console.log('editID ok');
 
                 console.log('this', this);
                 console.log('$(this)', $(this));
-                let getID = $(this).attr('data-id');
+                let getID = $(this).attr('data-id');    //當點擊事件觸發時，$(this) 指的是當前被點擊的元素（即 .my-edit 類的按鈕）。attr('data-id') 會獲取該元素上的 data-id 屬性的值。這通常是用來存儲該行的唯一標識符（例如，某個表格的 ID）。這個值被儲存在變數 getID 中
                 console.log('getID', getID);
 
                 // ajax -> data
-                let tmpName = myModal2.find('.form-name');
-                tmpName.val(getID);
+                let tmpName = myModal2.find('.form-name');  //這行代碼在 myModal2 中查找具有 form-name 類名的元素，並將其儲存在變數 tmpName 中。這些元素可能是模態框內用來顯示或編輯的表單字段。
+                tmpName.val(getID);                         //這行代碼將 getID 的值設置為 tmpName（即 .form-name 類的輸入框或其他表單元素）的值。這樣一來，當你點擊編輯按鈕時，該字段的值會被更新為該行對應的 data-id 值。
 
-
+                //當使用者點擊 .my-edit 類的編輯按鈕時，程式會抓取該按鈕的 data-id 屬性值，並將它填入模態框中的 .form-name 表單元素中。這樣，你就可以在模態框中顯示或修改該 ID 相關的資料。
+                //通常這種方式會與 Ajax 等技術配合使用，從伺服器加載該 ID 相關的具體資料並顯示在表單中。
 
             });
         });
