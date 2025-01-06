@@ -16,11 +16,17 @@
             background-color: lightblue;
             border-radius: 35px;
 
-            /* display: none; */
+            display: none;
 
             position: fixed;
             left: 10%;
             top: 10%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
         }
 
         .box>.close {
@@ -38,6 +44,27 @@
             justify-content: center;
             align-items: center;
         }
+
+        td {
+            padding-top: 10px;
+        }
+
+        input[type="text"] {
+            border-radius: 10px;
+            padding: 8px;
+            /* 為輸入框內部添加一些內邊距 */
+            border: 1px solid #ccc;
+            /* 設定邊框顏色和樣式 */
+            width: 200px;
+            /* 設定輸入框的寬度 */
+        }
+
+        button[type="submit"] {
+            border-radius: 10px;
+            padding: 8px;
+            border: 1px solid #ccc;
+
+        }
     </style>
 </head>
 
@@ -45,17 +72,36 @@
     <div class="container mt-5">
         <h1>my modal</h1>
     </div>
+
+    <!-- 新增 -->
     <div class="container mt-3">
-        <button id="myBtn" type="button" class="btn btn-primary">myBtn</button>
+        <button id="create" type="button" class="btn btn-primary"> + </button>
     </div>
+
+
+
     <div class="container mt-3">
         <div class="box" id="myModal">
+            <table>
+                <tr>
+                    <td><label for="name">姓名</label> </td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="" id=""></td>
+                </tr>
+                <tr>
+                    <td><button type="submit">submit</button></td>
+                </tr>
+            </table>
+
             <div class="close" id="modalClose">
                 X
             </div>
         </div>
 
     </div>
+
+
 
 
 
@@ -70,12 +116,12 @@
     <script>
         $(document).ready(function () {
             // 1.bind
-            const myBtn = $('#myBtn');           //將網頁中 ID 為 myBtn 的元素選取並賦值給 myBtn 變數
+            const create = $('#create');           //將網頁中 ID 為 myBtn 的元素選取並賦值給 myBtn 變數
             const myModal = $('#myModal');       //將網頁中 ID 為 myModal 的元素選取並賦值給 myModal 變數，這是用來顯示和隱藏的模態框
             const modalClose = $('#modalClose'); //將網頁中 ID 為 modalClose 的元素選取並賦值給 modalClose 變數，這是用來關閉模態框的按鈕
 
             // 2.action
-            myBtn.click(function (e) {           //當 myBtn 按鈕被點擊時，會觸發 click 事件，並執行內部的函數
+            create.click(function (e) {           //當 myBtn 按鈕被點擊時，會觸發 click 事件，並執行內部的函數
                 myModal.show();                  //讓 myModal 顯示出來 ， 顯示的具體方式取決於 myModal 可能有的 CSS 樣式
 
             });
