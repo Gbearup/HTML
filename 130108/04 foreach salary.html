@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1.增加10%薪水
+         2.當我薪水超過30000,增加bonus 5000
+         3.總共要發多少錢 -->
+
+    <script>
+        let salary = [10000, 20000, 30000, 40000, 50000];
+        let addSalary = [];
+        let bonusSalary = [];
+        let sum = 0;
+
+
+        // (1) js methos / map 用原生的js 寫跟map一樣的功能
+        salary.forEach(function (value) {    //forEach 會對salary陣列中的每一個元素進行迴圈操作
+            let tmp = value * 1.1;
+            addSalary.push(tmp);             //將變數 tmp 的值新增（或插入）到陣列 addSalary 的最後一個位置
+
+        });
+        console.log('salary', salary);
+        console.log('addSalary', addSalary);
+
+
+
+        // (2) js methos /map 用原生的js 寫跟filter一樣的功能
+        addSalary.forEach(function (value) {
+            let tmp = value;
+            if (value > 30000) {
+                tmp = value + 5000;
+            }
+            bonusSalary.push(tmp);
+        });
+        console.log('bonusSalary', bonusSalary);
+
+
+        // (3) js method / sum
+
+        bonusSalary.forEach(function (value) {
+            sum += value;
+        })
+        console.log('sum', sum);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // myArr.foreach(function (value) {
+        //     console.log('value', value);
+        // })
+
+        // $.each(collection, function (indexInArray, valueOfElement) {
+
+        // });
+
+        // $(selector).each(function (index, element) {
+
+        // })
+
+
+        // let newArr = arr.map(function (num) {
+        //     return num + 4;  // 將每個元素加上4
+        // });
+
+        // console.log(newArr);
+    </script>
+
+</body>
+
+</html>

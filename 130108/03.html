@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        let myArr = [1, 2, 3, 4, 5];
+        let newArr = [];
+        console.log('myArr', myArr);
+        // element 就是 value 的意思
+
+        //(1) js methos /map 用原生的js 寫跟map一樣的功能
+        // myArr.forEach(function (value) {
+        //     console.log('value', value);
+        //     let tmp = value * 2;
+        //     newArr.push(tmp);
+        // });
+        // console.log(newArr);
+
+
+
+
+        // (2) js methos /map 用原生的js 寫跟filter一樣的功能
+        myArr.forEach(function (value) {
+            if (value > 3) {
+                newArr.push(value);
+            }
+        });
+        console.log(newArr);
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+        // myArr.foreach(function (value) {
+        //     console.log('value', value);
+        // })
+
+        // $.each(collection, function (indexInArray, valueOfElement) {
+
+        // });
+
+        // $(selector).each(function (index, element) {
+
+        // })
+
+
+        // let newArr = arr.map(function (num) {
+        //     return num + 4;  // 將每個元素加上4
+        // });
+
+        // console.log(newArr);
+    </script>
+
+</body>
+
+</html>
