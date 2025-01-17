@@ -64,10 +64,24 @@
 
         }
 
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+
+        /* 加入動畫效果 */
         h2 {
             color: white;
             font-size: 2em;
-
+            animation: pulse 1s ease-in-out infinite;
         }
 
 
@@ -77,6 +91,21 @@
             object-fit: contain;
 
         }
+
+        .box3 {
+            /* border: 1px solid black; */
+            margin: auto;
+            width: 100%;
+            height: 50vh;
+            /* background-color: orange; */
+            border-radius: 10px;
+            /* background-color: rgba(255, 165, 0, 0.8); */
+            /* 橘色半透明背景 */
+            display: flex;
+            flex-direction: column;
+
+        }
+
     </style>
 </head>
 
@@ -91,7 +120,13 @@
     <div class="container text-center mt-5">
         <div class="row">
             <div class="col-2">
+                <div class="box3">
                 <img src="./3.jpg" alt="">
+                <img src="./4.jpg" alt="">
+                <img src="./5.jpg" alt="">
+                <img src="./6.jpg" alt="">
+                
+            </div>
             </div>
             <div class="col-8">
                 <div class="box1">
@@ -115,8 +150,18 @@
                 </div>
             </div>
             <div class="col-2">
-                <img src="./2.jpg" alt="">
-            </div>
+                
+                    <div class="box3">
+                    <img src="./2.jpg" alt="">
+                    <img src="./7.jpg" alt="">
+                    <img src="./8.jpg" alt="">
+                    <img src="./9.jpg" alt="">
+                    <img src="./1.jpg" alt="">
+                    </div>
+                    
+                </div>
+                
+            
         </div>
 
 
@@ -181,6 +226,16 @@
                         clearInterval(myInterval);
                         startBtn.show();
                         shootBtn.hide();
+
+
+                        if (scoreVar > scoreHighVar) {
+                            scoreHighVar = scoreVar;
+                            highScore.text(scoreHighVar);  // 顯示新的最高分數
+                        }
+
+
+
+
                     } else {
                         timer.text(tmpTime);
                     }
@@ -203,6 +258,15 @@
 
             resetBtn.click(function (e) {
                 console.log('resetBtn ok');
+                // 重設時間為5秒
+                timeVar = 5;
+                // 重設分數為0
+                scoreVar = 0;
+                nowScore.text(scoreVar);
+                timer.text(timeVar);
+                gameFlag = true;  // 重新啟動遊戲
+                startBtn.show();  // 顯示開始按鈕
+                shootBtn.hide();   // 隱藏投球按鈕
             });
 
 
