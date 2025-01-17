@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倒數計時範例</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .timer {
+            font-size: 30px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>投籃大賽</h1>
+    <button class="btn" id="startTimer">開始倒數</button>
+    
+    <div class="timer">
+        <p>倒數計時: <span id="countdown">10</span> 秒</p>
+    </div>
+
+    <script>
+        // 當按下 "開始倒數" 按鈕時啟動倒數計時
+        $('#startTimer').click(function() {
+            var countdown = 10;  // 設定初始倒數時間為 10 秒
+            $('#countdown').text(countdown);  // 顯示初始倒數秒數
+
+            // 開始倒數計時
+            var timer = setInterval(function() {
+                countdown--;  // 每次倒數 1 秒
+                $('#countdown').text(countdown);  // 更新倒數顯示
+
+                if (countdown <= 0) {
+                    clearInterval(timer);  // 停止計時器
+                    $('#countdown').text("時間到！");  // 顯示時間到
+                }
+            }, 1000);  // 每秒更新一次
+        });
+    </script>
+
+</body>
+</html>

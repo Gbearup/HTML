@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投籃大賽</title>
+    <!-- link css 順序 1.bs 2.self -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <style>
+        body {
+            background-image: url(./champion_icon.jpg);
+            background-size: 40%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* 設置黑色背景並且透明度為 50% */
+            background-blend-mode: overlay;
+            /* 使用 overlay 混合模式讓顏色與圖片融合 */
+
+
+        }
+
+        .box1 {
+            border: 1px solid black;
+            margin: auto;
+            width: 80%;
+            height: 50vh;
+            background-color: orange;
+            border-radius: 10px;
+            background-color: rgba(255, 165, 0, 0.8);
+            /* 橘色半透明背景 */
+
+        }
+
+        .box2 {
+            margin: auto;
+            width: 80%;
+            height: 10vh;
+            /* background-color: lightblue; */
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        span {
+            font-size: 40px;
+        }
+
+
+        .container-box {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        img {
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: white;
+            font-size: 3em;
+
+        }
+
+
+        .col-2 img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container text-center mt-5">
+        <h2>投籃大賽</h2>
+        <hr>
+
+
+    </div>
+
+    <div class="container text-center mt-5">
+        <div class="row">
+            <div class="col-2">
+                <img src="./3.jpg" alt="">
+            </div>
+            <div class="col-8">
+                <div class="box1">
+                    <div class="container-box">
+                        <div>
+                            倒數計時<br>
+                            <span>60</span>
+                        </div>
+                        <div>
+                            最高分數<br>
+                            <span>999</span>
+                        </div>
+                    </div>
+                    <br><br><br>
+                    <p>
+                        分數
+                    </p>
+                    <p>
+                        <span>168</span>
+                    </p>
+                </div>
+            </div>
+            <div class="col-2">
+                <img src="./2.jpg" alt="">
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="container text-center mt-5">
+        <div class="box2">
+            <button type="button" class="btn btn-dark btn-lg">開始</button>
+            <button type="button" class="btn btn-danger btn-lg">投球</button>
+            <button type="button" class="btn btn-secondary btn-lg">重置</button>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- js include 順序 1.jq 2.bs 3.self -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+        integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        // 當按下 "開始倒數" 按鈕時啟動倒數計時
+        $('#startTimer').click(function () {
+            var countdown = 60;  // 設定初始倒數時間為 10 秒
+            $('#countdown').text(countdown);  // 顯示初始倒數秒數
+
+            // 開始倒數計時
+            var timer = setInterval(function () {
+                countdown--;  // 每次倒數 1 秒
+                $('#countdown').text(countdown);  // 更新倒數顯示
+
+                if (countdown <= 0) {
+                    clearInterval(timer);  // 停止計時器
+                    $('#countdown').text("時間到！");  // 顯示時間到
+                }
+            }, 1000);  // 每秒更新一次
+        });
+    </script>
+
+</body>
+
+</html>
