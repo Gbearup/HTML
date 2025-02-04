@@ -1,0 +1,43 @@
+<script>
+    $(document).ready(function () {
+        const apiKey = "26a7a91a";
+        const url = "https://www.omdbapi.com/";
+
+        // 當點擊電影名稱時觸發搜尋
+        $('.movie-item').click(function () {
+            const movieTitle = $(this).data('movie');
+            const requestUrl = `${url}?t=${movieTitle}&apikey=${apiKey}`;
+
+            $.ajax({
+                type: "GET",
+                url: requestUrl,
+                dataType: "json",
+                success: function (res) {
+                    if (res.Response === "True") {
+                        const title = res.Title;
+                        const year = res.Year;
+                        const plot = res.Plot;
+                        const poster = res.Poster;
+                        const imdbRating = res.imdbRating;
+
+                        $('#movie-info').html(`
+                            <h4>${title} (${year})</h4>
+                            <img src="${poster}" alt="${title}" class="img-fluid">
+                            <p><strong>IMDb 評分:</strong> ${imdbRating}</p>
+                            <p><strong>劇情簡介:</strong> ${plot}</p>
+                        `);
+                    } else {
+                        $('#movie-info').html('<p>找不到該電影資料。</p>');
+                    }
+                },
+                error: function (err) {
+                    console.error("Error fetching movie data:", err);
+                    $('#movie-info').html('<p>無法取得電影資料，請稍後再試。</p>');
+                }
+            });
+        });
+
+        // 頁面加載後自動點擊第25名電影
+        $('.movie-item[data-movie="The Green Mile"]').click();
+    });
+</script>

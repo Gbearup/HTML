@@ -14,8 +14,18 @@
 <body>
 
     <div class="container mt-3">
-        <h2>Bordered Table</h2>
+        <h2>複利投資表</h2>
         <p>The .table-bordered class adds borders on all sides of the table and the cells:</p>
+        <div class="container mt-4 d-flex align-items-center">
+            <div class="col-xs-2">
+                <input type="number" id="myYear" class="form-control" value="10"> 
+            </div>
+            <div class="col-xs-2 ms-2">
+                <input type="number" id="myRate" class="form-control" value="1.08">
+            </div>
+            <button class="btn btn-primary ms-2">複利計算</button>
+                        
+        </div>
         <table class="table table-bordered" id="myTable">
             <thead>
                 <tr>
@@ -108,9 +118,9 @@
                 }
 
                 console.log(`o ${tmpYear} - 第${i}年 => ${sum}`);
-                console.log('sum',sum);
-                console.log('sum typeof', typeof(sum));
-                
+                console.log('sum', sum);
+                console.log('sum typeof', typeof (sum));
+
                 let tmpText = Number(sum).toFixed(2);
                 tmpObj[i] = tmpText;
                 console.log('change sum', sum);

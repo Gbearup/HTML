@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>電影搜尋排行榜</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .movie-list {
+            max-height: 400px;
+            overflow-y: scroll;
+        }
+
+        .movie-item {
+            cursor: pointer;
+        }
+
+        .movie-item:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1>懷舊電影搜尋排行榜</h1>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <h4>排行榜</h4>
+                <ul class="list-group movie-list">
+                    <li class="list-group-item movie-item" data-movie="Inception">1. Inception (全面啟動)</li>
+                    <li class="list-group-item movie-item" data-movie="The Dark Knight">2. The Dark Knight (黑暗騎士)</li>
+                    <li class="list-group-item movie-item" data-movie="The Matrix">3. The Matrix (黑客帝國)</li>
+                    <li class="list-group-item movie-item" data-movie="Titanic">4. Titanic (鐵達尼號)</li>
+                    <li class="list-group-item movie-item" data-movie="The Shawshank Redemption">5. The Shawshank
+                        Redemption (刺激1995)</li>
+                    <li class="list-group-item movie-item" data-movie="Forrest Gump">6. Forrest Gump (阿甘正傳)</li>
+                    <li class="list-group-item movie-item" data-movie="The Godfather">7. The Godfather (教父)</li>
+                    <li class="list-group-item movie-item" data-movie="Avengers: Endgame">8. Avengers: Endgame
+                        (復仇者聯盟：終局之戰)</li>
+                    <li class="list-group-item movie-item" data-movie="The Lion King">9. The Lion King (獅子王)</li>
+                    <li class="list-group-item movie-item" data-movie="Interstellar">10. Interstellar (星際穿越)</li>
+                    <li class="list-group-item movie-item" data-movie="Pulp Fiction">11. Pulp Fiction (低俗小說)</li>
+                    <li class="list-group-item movie-item"
+                        data-movie="The Lord of the Rings: The Fellowship of the Ring">12. The Lord of the Rings: The
+                        Fellowship of the Ring (魔戒：護戒使者)</li>
+                    <li class="list-group-item movie-item" data-movie="Spider-Man: No Way Home">13. Spider-Man: No Way
+                        Home (蜘蛛人：無家日)</li>
+                    <li class="list-group-item movie-item" data-movie="Jurassic Park">14. Jurassic Park (侏羅紀公園)</li>
+                    <li class="list-group-item movie-item" data-movie="The Silence of the Lambs">15. The Silence of the
+                        Lambs (沉默的羔羊)</li>
+                    <li class="list-group-item movie-item" data-movie="Fight Club">16. Fight Club (鬥陣俱樂部)</li>
+                    <li class="list-group-item movie-item" data-movie="Gladiator">17. Gladiator (角鬥士)</li>
+                    <li class="list-group-item movie-item" data-movie="Deadpool">18. Deadpool (死侍)</li>
+                    <li class="list-group-item movie-item" data-movie="Harry Potter and the Sorcerer's Stone">19. Harry
+                        Potter and the Sorcerer's Stone (哈利波特與魔法石)</li>
+                    <li class="list-group-item movie-item" data-movie="Shutter Island">20. Shutter Island (禁閉島)</li>
+                    <li class="list-group-item movie-item" data-movie="Guardians of the Galaxy">21. Guardians of the
+                        Galaxy (銀河護衛隊)</li>
+                    <li class="list-group-item movie-item" data-movie="Star Wars: A New Hope">22. Star Wars: A New Hope
+                        (星際大戰：新希望)</li>
+                    <li class="list-group-item movie-item" data-movie="The Prestige">23. The Prestige (致命魔術)</li>
+                    <li class="list-group-item movie-item" data-movie="Goodfellas">24. Goodfellas (好家伙)</li>
+                    <li class="list-group-item movie-item" data-movie="The Green Mile">25. The Green Mile (綠色奇蹟)</li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-6">
+                <h4>搜尋結果</h4>
+                <div id="movie-info">
+                    <p>請從排行榜中選擇電影。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $(document).ready(function () {
+            const apiKey = "26a7a91a";
+            const url = "https://www.omdbapi.com/";
+
+            // 當點擊電影名稱時觸發搜尋
+            $('.movie-item').click(function () {
+                const movieTitle = $(this).data('movie');
+                const requestUrl = `${url}?t=${movieTitle}&apikey=${apiKey}`;
+
+                $.ajax({
+                    type: "GET",
+                    url: requestUrl,
+                    dataType: "json",
+                    success: function (res) {
+                        if (res.Response === "True") {
+                            const title = res.Title;
+                            const year = res.Year;
+                            const plot = res.Plot;
+                            const poster = res.Poster;
+                            const imdbRating = res.imdbRating;
+
+                            $('#movie-info').html(`
+                                <h4>${title} (${year})</h4>
+                                <img src="${poster}" alt="${title}" class="img-fluid">
+                                <p><strong>IMDb 評分:</strong> ${imdbRating}</p>
+                                <p><strong>劇情簡介:</strong> ${plot}</p>
+                            `);
+                        } else {
+                            $('#movie-info').html('<p>找不到該電影資料。</p>');
+                        }
+                    },
+                    error: function (err) {
+                        console.error("Error fetching movie data:", err);
+                        $('#movie-info').html('<p>無法取得電影資料，請稍後再試。</p>');
+                    }
+                });
+            });
+
+            // 頁面加載後自動點擊第25名電影
+            $('.movie-item[data-movie="The Green Mile"]').click();
+        });
+    </script>
+</body>
+
+</html>

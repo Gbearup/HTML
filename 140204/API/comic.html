@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>漫畫搜尋</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .movie-list {
+            max-height: 400px;
+            overflow-y: scroll;
+        }
+
+        .movie-item {
+            cursor: pointer;
+        }
+
+        .movie-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        #comic-info img {
+            width: 100%;
+            max-width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1>漫畫搜尋</h1>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <h4>搜尋漫畫</h4>
+                <div class="form-group">
+                    <label for="search-input">搜尋漫畫名稱</label>
+                    <input type="text" class="form-control" id="search-input" placeholder="例如: Naruto">
+                </div>
+                <button class="btn btn-primary mt-3" id="search-button">搜尋</button>
+            </div>
+            <div class="col-12 col-md-6">
+                <h4>搜尋結果</h4>
+                <div id="comic-info">
+                    <p>請輸入漫畫名稱並點擊搜尋。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $(document).ready(function () {
+            const apiBaseUrl = "https://api.jikan.moe/v4/manga";
+
+            $('#search-button').click(function () {
+                const searchQuery = $('#search-input').val();
+
+                if (searchQuery.trim() === "") {
+                    $('#comic-info').html("<p>請輸入漫畫名稱進行搜尋。</p>");
+                    return;
+                }
+
+                const requestUrl = `${apiBaseUrl}?q=${searchQuery}&limit=1`;
+
+                $.ajax({
+                    type: "GET",
+                    url: requestUrl,
+                    dataType: "json",
+                    success: function (res) {
+                        if (res.data && res.data.length > 0) {
+                            const manga = res.data[0];
+                            const title = manga.title;
+                            const synopsis = manga.synopsis;
+                            const imageUrl = manga.images.jpg.large_image_url;
+                            const url = manga.url;
+
+                            $('#comic-info').html(`
+                                <h4>${title}</h4>
+                                <img src="${imageUrl}" alt="${title}" class="img-fluid">
+                                <p><strong>劇情簡介:</strong> ${synopsis}</p>
+                                <p><a href="${url}" target="_blank" class="btn btn-primary">前往漫畫頁面</a></p>
+                            `);
+                        } else {
+                            $('#comic-info').html('<p>找不到相關漫畫資料。</p>');
+                        }
+                    },
+                    error: function (err) {
+                        console.error("Error fetching comic data:", err);
+                        $('#comic-info').html('<p>無法取得漫畫資料，請稍後再試。</p>');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
