@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台股 0050 走勢圖</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <h1>台股 0050 走勢圖</h1>
+    <canvas id="stockChart" width="400" height="200"></canvas>
+
+    <script>
+        // 目標股票代號（台股 0050）
+        let symbol = "0050.TW";
+
+        // 代理伺服器（AllOrigins）+ Yahoo Finance API URL
+        let url = `http://localhost:8080/https://query1.finance.yahoo.com/v8/finance/chart/${symbol}?interval=1m&range=1d`;
+
+        // 使用 jQuery 發送 AJAX 請求
+        $.ajax({
+            type: "GET",
+            url: url,
+            dataType: "json",
+            success: function (data) {
+                try {
+                    // 解析回應數據
+                    const responseData = data.chart.result[0];
+                    const timestamps = responseData.timestamp;
+                    let closePrices = responseData.indicators.quote[0].close;
+
+                    // 過濾掉 null 值的收盤價
+                    closePrices = closePrices.filter(price => price !== null);
+
+                    // 檢查數據
+                    console.log("時間戳：", timestamps);
+                    console.log("收盤價：", closePrices);
+
+                    // 計算最小和最大價格，避免空數據
+                    const minPrice = Math.min(...closePrices) - 1;
+                    const maxPrice = Math.max(...closePrices) + 1;
+
+                    // 格式化時間戳
+                    const labels = timestamps.map(timestamp => {
+                        let date = new Date(timestamp * 1000);  // 將時間戳轉換為當地時間
+                        return date.toLocaleTimeString();  // 顯示為時間格式
+                    });
+
+                    // 使用 Chart.js 顯示股價走勢圖
+                    var ctx = document.getElementById('stockChart').getContext('2d');
+                    var chart = new Chart(ctx, {
+                        type: 'line',  // 顯示線圖
+                        data: {
+                            labels: labels,  // 使用轉換後的時間格式作為 X 軸的標籤
+                            datasets: [{
+                                label: `股價走勢 (${symbol})`,
+                                data: closePrices,  // 使用收盤價數據
+                                borderColor: 'rgb(75, 192, 192)',  // 線條顏色
+                                fill: false  // 不填充顏色
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                x: { beginAtZero: true },
+                                y: {
+                                    min: minPrice,  // 設定 Y 軸的最小值
+                                    max: maxPrice,  // 設定 Y 軸的最大值
+                                    ticks: {
+                                        stepSize: 0.5  // 設定刻度間隔，讓顯示更精細
+                                    }
+                                }
+                            }
+                        }
+                    });
+                } catch (error) {
+                    console.log("解析 JSON 時出錯:", error);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.log("請求失敗:", error);
+            }
+        });
+    </script>
+</body>
+
+</html>
