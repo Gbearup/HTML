@@ -56,6 +56,25 @@
                     <canvas id="myChart1"></canvas>
                 </div>
             </div>
+            <div class="col">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi placeat consequuntur beatae assumenda,
+                fuga explicabo aperiam. Corporis ab cum labore perferendis ipsa, provident eum repellat inventore,
+                itaque quo, eligendi sint.
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div>
+                    <canvas id="myChart2"></canvas>
+                </div>
+            </div>
+            <div class="col">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi placeat consequuntur beatae assumenda,
+                fuga explicabo aperiam. Corporis ab cum labore perferendis ipsa, provident eum repellat inventore,
+                itaque quo, eligendi sint.
+            </div>
 
         </div>
     </div>
@@ -82,6 +101,7 @@
             const myTable = $('#myTable');
             const myTbody = myTable.find('tbody');
             const ctx1 = document.getElementById('myChart1');
+            const ctx2 = document.getElementById('myChart2');
 
             // data
 
@@ -151,6 +171,27 @@
                     // ctx1
                     new Chart(ctx1, {
                         type: 'bar',
+                        data: {
+                            labels: ['rise0', 'rise1', 'rise2', 'lose0', 'lose1', 'lose2'],
+                            datasets: [{
+                                label: '# of Votes',
+                                data: [resArr['rise0'], resArr['rise1'], resArr['rise2'], resArr['lose0'], resArr['lose1'], resArr['lose2']],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                    // ctx1 end
+                    // ctx2
+
+                    new Chart(ctx2, {
+                        type: 'line',
                         data: {
                             labels: ['rise0', 'rise1', 'rise2', 'lose0', 'lose1', 'lose2'],
                             datasets: [{
