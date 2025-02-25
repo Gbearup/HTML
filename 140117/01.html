@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投籃大賽</title>
+    <!-- link css 順序 1.bs 2.self -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <style>
+        body {
+            background-image: url(./champion_icon.jpg);
+            background-size: 40%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* 設置黑色背景並且透明度為 50% */
+            background-blend-mode: overlay;
+            /* 使用 overlay 混合模式讓顏色與圖片融合 */
+
+
+        }
+
+        .box1 {
+            border: 1px solid black;
+            margin: auto;
+            width: 80%;
+            height: 50vh;
+            background-color: orange;
+            border-radius: 10px;
+            background-color: rgba(255, 165, 0, 0.8);
+            /* 橘色半透明背景 */
+
+        }
+
+        .box2 {
+            margin: auto;
+            width: 80%;
+            height: 10vh;
+            /* background-color: lightblue; */
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        span {
+            font-size: 40px;
+        }
+
+
+        .container-box {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        img {
+            border-radius: 5px;
+
+
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+
+        /* 加入動畫效果 */
+        h2 {
+            color: white;
+            font-size: 2em;
+            animation: pulse 1s ease-in-out infinite;
+        }
+
+
+        .col-2 img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+
+        }
+
+        .box3 {
+            /* border: 1px solid black; */
+            margin: auto;
+            width: 100%;
+            height: 50vh;
+            /* background-color: orange; */
+            border-radius: 10px;
+            /* background-color: rgba(255, 165, 0, 0.8); */
+            /* 橘色半透明背景 */
+            display: flex;
+            flex-direction: column;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container text-center mt-5">
+        <h2>投籃大賽</h2>
+        <hr>
+
+
+    </div>
+
+    <div class="container text-center mt-5">
+        <div class="row">
+            <div class="col-2">
+                <div class="box3">
+                    <img src="./3.jpg" alt="">
+                    <img src="./4.jpg" alt="">
+                    <img src="./5.jpg" alt="">
+                    <img src="./6.jpg" alt="">
+
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="box1">
+                    <div class="container-box">
+                        <div>
+                            倒數計時<br>
+                            <span id="timer">60</span>
+                        </div>
+                        <div>
+                            最高分數<br>
+                            <span id="highScore">999</span>
+                        </div>
+                    </div>
+                    <br><br><br>
+                    <p>
+                        分數
+                    </p>
+                    <p>
+                        <span id="nowScore">168</span>
+                    </p>
+                </div>
+            </div>
+            <div class="col-2">
+
+                <div class="box3">
+                    <img src="./2.jpg" alt="">
+                    <img src="./7.jpg" alt="">
+                    <img src="./8.jpg" alt="">
+                    <img src="./9.jpg" alt="">
+                    <img src="./1.jpg" alt="">
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <div class="container text-center mt-5">
+        <div class="box2">
+            <button type="button" id="startBtn" class="btn btn-dark btn-lg">開始</button>
+            <button type="button" id="shootBtn" class="btn btn-danger btn-lg">投球</button>
+            <button type="button" id="resetBtn" class="btn btn-secondary btn-lg">重置</button>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- js include 順序 1.jq 2.bs 3.self -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+        integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            // 1.bind
+            const nowScore = $('#nowScore');
+            const highScore = $('#highScore');
+            const timer = $('#timer');
+            const startBtn = $('#startBtn');
+            const shootBtn = $('#shootBtn');
+            const resetBtn = $('#resetBtn');
+
+            let scoreVar = 0;
+            let scoreHighVar = 0;
+            let timeVar = 5;
+            let gameFlag = true;
+
+            nowScore.text(scoreVar);
+            highScore.text(scoreHighVar);
+            timer.text(timeVar);
+
+            shootBtn.hide();
+
+            // 2.action
+            startBtn.click(function (e) {
+                if (gameFlag == false) {
+                    console.log('gameFlag false', gameFlag);
+                    return false;
+                }
+                startBtn.hide();
+                shootBtn.show();
+                console.log('startBtn ok');
+                // timer -1 / sec / 開始 start 停止 0
+                const myInterval = setInterval(myTimer, 1000);
+                let tmpTime = timeVar;
+                function myTimer() {
+                    tmpTime = tmpTime - 1;
+                    if (tmpTime < 0) {
+                        gameFlag = false;
+                        clearInterval(myInterval);
+                        startBtn.show();
+                        shootBtn.hide();
+
+
+                        if (scoreVar > scoreHighVar) {
+                            scoreHighVar = scoreVar;
+                            highScore.text(scoreHighVar);  // 顯示新的最高分數
+                        }
+
+
+
+
+                    } else {
+                        timer.text(tmpTime);
+                    }
+
+                }
+                function myStop() {
+                    clearInterval(myInterval);
+                }
+
+            });
+
+            shootBtn.click(function (e) {
+                if (gameFlag == false) {
+                    console.log('gameFlag false', gameFlag);
+                    return false;
+                }
+                scoreVar += 2;
+                nowScore.text(scoreVar);
+            });
+
+            resetBtn.click(function (e) {
+                console.log('resetBtn ok');
+                // 重設時間為5秒
+                timeVar = 5;
+                // 重設分數為0
+                scoreVar = 0;
+                nowScore.text(scoreVar);
+                timer.text(timeVar);
+                gameFlag = true;  // 重新啟動遊戲
+                startBtn.show();  // 顯示開始按鈕
+                shootBtn.hide();   // 隱藏投球按鈕
+            });
+
+
+        });
+    </script>
+
+</body>
+
+</html>
